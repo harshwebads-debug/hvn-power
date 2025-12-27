@@ -1344,7 +1344,7 @@
             transform: translateX(5px);
         }
 
-        /* --- VIDEO SHOWCASE SECTION --- */
+        /* --- VIDEO SHOWCASE SECTION (RESTORED GLITCH TITLE & SCANLINES) --- */
         #hvn-showcase {
             position: relative;
             height: 100vh;
@@ -1382,128 +1382,67 @@
             z-index: 2;
         }
 
-        .glass-card-center {
-            position: relative;
-            z-index: 4;
-            padding: 40px 60px;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 4px;
-            text-align: center;
-            box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
-            overflow: hidden;
-            max-width: 800px;
-            width: 90%;
-        }
-
-        .glass-card-center::after {
-            content: '';
+        .scanlines {
             position: absolute;
             top: 0;
-            left: -100%;
-            width: 50%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transform: skewX(-20deg);
-            animation: shine 5s infinite;
-        }
-
-        @keyframes shine {
-            0% {
-                left: -100%;
-            }
-
-            20% {
-                left: 200%;
-            }
-
-            100% {
-                left: 200%;
-            }
-        }
-
-        .showcase-sub {
-            display: block;
-            color: var(--hvn-green);
-            font-size: 0.9rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-
-        .showcase-title {
-            font-family: var(--font-heading);
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            color: #fff;
-            margin-bottom: 20px;
-            line-height: 1.1;
-            background: linear-gradient(to right, #fff, #bbb);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .play-btn-wrapper {
-            position: relative;
-            width: 80px;
-            height: 80px;
-            margin: 30px auto 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-        }
-
-        .play-btn {
-            width: 60px;
-            height: 60px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #fff;
-            font-size: 1.2rem;
-            transition: 0.3s;
-            position: relative;
-            z-index: 2;
-        }
-
-        .play-pulse {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            left: 0;
             width: 100%;
             height: 100%;
-            border: 1px solid var(--hvn-green);
-            border-radius: 50%;
-            opacity: 0;
-            animation: pulseRing 2s infinite;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.2));
+            background-size: 100% 4px;
+            z-index: 3;
+            pointer-events: none;
+            opacity: 0.6;
         }
 
-        @keyframes pulseRing {
-            0% {
-                width: 60px;
-                height: 60px;
-                opacity: 1;
-                border-width: 3px;
+        .video-content {
+            position: relative;
+            z-index: 4;
+            max-width: 900px;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .glitch-title {
+            font-family: var(--font-heading);
+            font-size: clamp(3rem, 6vw, 6rem);
+            font-weight: 800;
+            color: #fff;
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+            text-shadow: 2px 2px var(--hvn-red), -2px -2px var(--hvn-green);
+            animation: glitch 1s infinite;
+        }
+
+        @keyframes glitch {
+
+            2%,
+            64% {
+                transform: translate(2px, 0) skew(0deg);
             }
 
-            100% {
-                width: 120px;
-                height: 120px;
-                opacity: 0;
-                border-width: 0px;
+            4%,
+            60% {
+                transform: translate(-2px, 0) skew(0deg);
+            }
+
+            62% {
+                transform: translate(0, 0) skew(5deg);
             }
         }
 
-        .play-btn:hover {
-            background: var(--hvn-green);
-            color: #000;
-            transform: scale(1.1);
+        .video-desc {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 20px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            display: inline-block;
         }
 
         /* --- CONTACT SECTION (THE COMMAND CENTER) --- */
@@ -1531,7 +1470,6 @@
             pointer-events: none;
         }
 
-        /* FIXED: Max-width and padding */
         .contact-container {
             position: relative;
             z-index: 2;
@@ -1653,7 +1591,6 @@
             color: var(--hvn-green);
         }
 
-        /* FIXED: Removed extra margin below button */
         .submit-btn {
             background: var(--hvn-green);
             color: #000;
@@ -1676,7 +1613,6 @@
             background: #fff;
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
         }
-
 
         /* --- MOBILE FIXES --- */
         @media (max-width: 992px) {
@@ -1894,12 +1830,6 @@
                 min-height: 400px;
             }
 
-            /* Showcase Mobile */
-            .glass-card-center {
-                width: 95%;
-                padding: 30px 20px;
-            }
-
             /* Leadership Mobile */
             #hvn-leadership {
                 padding: 60px 0;
@@ -1969,6 +1899,15 @@
 
             .contact-info h2 {
                 font-size: 2.5rem;
+            }
+
+            /* Showcase Mobile */
+            .glitch-title {
+                font-size: 3rem;
+            }
+
+            .video-desc {
+                font-size: 1rem;
             }
         }
     </style>
@@ -2136,7 +2075,7 @@
             </div>
         </section>
 
-        <!-- SECTION 3: LEADERSHIP (SLIDER RESTORED) -->
+        <!-- SECTION 3: LEADERSHIP -->
         <section id="hvn-leadership" class="hvn-section">
             <div class="leadership-container">
                 <!-- Left: Static Content -->
@@ -2337,22 +2276,17 @@
                     Your browser does not support the video tag.
                 </video>
                 <div class="video-overlay"></div>
+                <div class="scanlines"></div>
             </div>
 
-            <div class="glass-card-center reveal-showcase">
-                <span class="showcase-sub">Experience The Power</span>
-                <h2 class="showcase-title">Engineering <br> Excellence</h2>
-                <div class="play-btn-wrapper">
-                    <div class="play-pulse"></div>
-                    <div class="play-btn">
-                        <i class="fa-solid fa-play"></i>
-                    </div>
-                </div>
+            <div class="container video-content">
+                <h2 class="glitch-title">Cinematic <br> <span style="color: var(--hvn-green)">Excellence</span></h2>
+                <div class="video-desc">Manufacturing in Motion</div>
             </div>
         </section>
 
-        <section id="hvn-contact" class="hvn-section"
-            style="background: #050505; display: flex; align-items: center; justify-content: center;">
+        <!-- CONTACT SECTION -->
+        <section id="hvn-contact" class="hvn-section">
             <div class="contact-map-bg"></div>
             <div class="container hvn-about-container">
                 <div class="contact-container">
@@ -2557,7 +2491,7 @@
                     const id = entry.target.id;
                     let idx = 0;
                     if (id === 'hvn-about') idx = 1;
-                    if (id === 'hvn-leadership') idx = 2; // Updated Index
+                    if (id === 'hvn-leadership') idx = 2;
                     if (id === 'hvn-products') idx = 3;
                     if (id === 'hvn-infrastructure') idx = 4;
                     if (id === 'hvn-sustainability') idx = 5;
