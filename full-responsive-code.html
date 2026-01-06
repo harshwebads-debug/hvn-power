@@ -6,15 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HVN Powercare | Powering Future</title>
 
-    <!-- 1. FONTS (Rajdhani for Tech feel, Inter for Cleanliness) -->
+    <!-- 1. FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Rajdhani:wght@500;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700&family=Outfit:wght@400;500;700;900&display=swap"
         rel="stylesheet">
-    <!-- favicon -->
-    <link rel="shortcut icon" href="assets/images/logo/hvn-logo-text.png" type="image/x-icon">
-    <!-- favicon -->
 
     <!-- 2. CSS FRAMEWORKS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -27,20 +24,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
 
     <style>
-        /* --- GLOBAL VARIABLES (BRAND COLORS RESTORED) --- */
+        /* --- GLOBAL VARIABLES --- */
         :root {
-            /* Brand Colors */
             --hvn-green: #28E98C;
             --hvn-red: #E63946;
-
-            /* Mapping to Theme */
             --hvn-primary: var(--hvn-green);
             --hvn-accent: var(--hvn-red);
             --hvn-secondary: #ffffff;
-
-            /* Modern Dark Background */
-            --hvn-bg-dark: #080a0f;
-
+            --hvn-bg-dark: #050505;
             --nav-height: 80px;
             --topbar-height: 40px;
         }
@@ -57,103 +48,9 @@
             width: 100%;
             background-color: var(--hvn-bg-dark);
             color: var(--hvn-secondary);
-            font-family: 'Inter', sans-serif;
-            overflow: hidden;
-            /* Scroll Snap needs this on body/html in some browsers, but mainly main wrapper */
-        }
-
-        /* --- TYPOGRAPHY UPDATES --- */
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6,
-        .hvn-hero-title,
-        .loader-text,
-        .bento-title,
-        .about-heading,
-        .hvn-nav-item,
-        .hvn-hero-label,
-        .about-sub,
-        .spec-tag,
-        .submit-btn,
-        .footer-logo,
-        .global-stat-number,
-        .partner-text,
-        .panel-heading {
-            font-family: 'Rajdhani', sans-serif;
-            /* Tech Headings */
-        }
-
-        /* --- PRELOADER --- */
-        #hvn-preloader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #050505;
-            z-index: 99999;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-
-        .loader-content-wrapper {
-            position: relative;
-            width: 300px;
-            height: 200px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .loader-text {
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: #fff;
-            margin-bottom: 20px;
-            letter-spacing: 4px;
-            overflow: hidden;
-            white-space: nowrap;
-            text-transform: uppercase;
-        }
-
-        .loader-text span {
-            display: inline-block;
-            transform: translateY(100%);
-            opacity: 0;
-        }
-
-        .loader-bar-bg {
-            width: 100%;
-            height: 2px;
-            background: rgba(255, 255, 255, 0.1);
-            position: relative;
-            overflow: hidden;
-            margin-bottom: 10px;
-        }
-
-        .loader-bar-fill {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 0%;
-            background: var(--hvn-primary);
-            box-shadow: 0 0 20px var(--hvn-primary);
-        }
-
-        .loader-percentage {
-            font-family: 'Rajdhani', sans-serif;
-            font-size: 1.2rem;
-            color: var(--hvn-primary);
-            font-weight: 700;
-            align-self: flex-end;
-            opacity: 0;
+            font-family: var(--font-body);
+            overflow-x: hidden;
+            cursor: default;
         }
 
         /* Noise Texture */
@@ -165,7 +62,7 @@
             height: 100%;
             pointer-events: none;
             z-index: 9999;
-            opacity: 0.04;
+            opacity: 0.05;
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
         }
 
@@ -176,7 +73,7 @@
             left: 0;
             width: 800px;
             height: 800px;
-            background: radial-gradient(circle, rgba(40, 233, 140, 0.06) 0%, rgba(0, 0, 0, 0) 70%);
+            background: radial-gradient(circle, rgba(40, 233, 140, 0.08) 0%, rgba(0, 0, 0, 0) 70%);
             transform: translate(-50%, -50%);
             pointer-events: none;
             z-index: 4;
@@ -184,14 +81,12 @@
             transition: opacity 0.3s;
         }
 
-        /* --- SCROLL CONTAINER (SCROLL SNAP ENABLED) --- */
+        /* --- SCROLL CONTAINER --- */
         .hvn-main-wrapper {
             height: 100vh;
             width: 100%;
             overflow-y: scroll;
-            overflow-x: hidden;
             scroll-snap-type: y mandatory;
-            /* Enabled Snap */
             scroll-behavior: smooth;
         }
 
@@ -199,7 +94,6 @@
             min-height: 100vh;
             width: 100%;
             scroll-snap-align: start;
-            /* Snap Point */
             scroll-snap-stop: always;
             position: relative;
             overflow: hidden;
@@ -227,7 +121,7 @@
 
         .hvn-topbar {
             height: var(--topbar-height);
-            background: #020405;
+            background: #000;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             display: flex;
             justify-content: space-between;
@@ -237,7 +131,6 @@
             letter-spacing: 1px;
             text-transform: uppercase;
             font-weight: 600;
-            font-family: 'Rajdhani', sans-serif;
             transition: height 0.4s ease, opacity 0.4s ease;
             overflow: hidden;
         }
@@ -265,7 +158,7 @@
 
         .hvn-navbar {
             height: var(--nav-height);
-            background: rgba(8, 10, 15, 0.8);
+            background: rgba(5, 5, 5, 0.7);
             backdrop-filter: blur(15px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             display: flex;
@@ -283,13 +176,13 @@
         }
 
         body.is-scrolled .hvn-navbar {
-            background: rgba(5, 5, 5, 0.98);
+            background: rgba(0, 0, 0, 0.98);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
             border-bottom: 1px solid var(--hvn-primary);
         }
 
         .hvn-logo-container img {
-            height: 70px !important;
+            height: 65px;
             width: auto;
             object-fit: contain;
         }
@@ -302,10 +195,10 @@
         .hvn-nav-item {
             color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
-            font-size: 1rem;
+            font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            font-weight: 600;
+            font-weight: 500;
             position: relative;
             transition: 0.3s;
             padding: 5px 0;
@@ -325,7 +218,7 @@
 
         .hvn-nav-item:hover {
             color: var(--hvn-secondary);
-            text-shadow: 0 0 8px rgba(40, 233, 140, 0.5);
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
         }
 
         .hvn-nav-item:hover::after {
@@ -337,143 +230,7 @@
             font-size: 1.6rem;
             color: #fff;
             cursor: pointer;
-            z-index: 1002;
         }
-
-        /* --- FLOATING SOCIAL WIDGET (LEFT SIDE) --- */
-        .floating-socials {
-            position: fixed;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%) translateX(-100%);
-            z-index: 900;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            background: rgba(10, 10, 10, 0.6);
-            backdrop-filter: blur(10px);
-            padding: 20px 10px;
-            border-radius: 0 10px 10px 0;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-left: none;
-            box-shadow: 5px 0 20px rgba(0, 0, 0, 0.5);
-        }
-
-        .float-icon {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.05);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #fff;
-            font-size: 1.3rem;
-            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            position: relative;
-        }
-
-        .float-icon:hover {
-            transform: scale(1.1) translateX(5px);
-        }
-
-        .float-icon.whatsapp:hover {
-            background: #25D366;
-            border-color: #25D366;
-            box-shadow: 0 0 15px #25D366;
-        }
-
-        .float-icon.phone:hover {
-            background: var(--hvn-primary);
-            border-color: var(--hvn-primary);
-            box-shadow: 0 0 15px var(--hvn-primary);
-            color: #000;
-        }
-
-        .float-icon.mail:hover {
-            background: var(--hvn-accent);
-            border-color: var(--hvn-accent);
-            box-shadow: 0 0 15px var(--hvn-accent);
-        }
-
-
-
-
-
-/* --- UPDATED LOGO STYLES --- */
-.hvn-logo-container {
-    display: flex;
-    align-items: center;
-    height: 100%;
-}
-
-.hvn-logo-container img {
-    height: 50px; /* Adjust height to fit navbar */
-    width: auto;
-    object-fit: contain;
-    /* Optional: If your logo is black and needs to be white, use filter */
-    /* filter: brightness(0) invert(1); */ 
-}
-
-/* --- UPDATED RESPONSIVE NAVBAR CSS --- */
-@media (max-width: 992px) {
-    /* 1. Show the Hamburger Menu Button */
-    .hvn-menu-btn {
-        display: block; 
-        font-size: 1.8rem;
-        color: var(--hvn-primary);
-        cursor: pointer;
-        z-index: 1002;
-    }
-
-    /* 2. Style the Navigation Links for Mobile (Off-canvas) */
-    .hvn-nav-links {
-        position: fixed;
-        top: 0;
-        right: -100%; /* Hide off-screen initially */
-        width: 100%; /* Full width */
-        height: 100vh;
-        background: rgba(5, 5, 5, 0.98); /* Dark background */
-        backdrop-filter: blur(20px);
-        display: flex;
-        flex-direction: column; /* Stack links vertically */
-        justify-content: center;
-        align-items: center;
-        gap: 30px; /* Space between links */
-        transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-        z-index: 1001;
-        border-left: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    /* 3. The Active Class (Triggered by JS) */
-    .hvn-nav-links.active {
-        right: 0; /* Slide in */
-    }
-
-    /* 4. Adjust Link Font Size for Mobile */
-    .hvn-nav-item {
-        font-size: 1.5rem;
-        opacity: 0; /* Hidden for animation */
-        transform: translateY(20px);
-        transition: 0.4s ease;
-    }
-
-    /* 5. Animate links when menu is active */
-    .hvn-nav-links.active .hvn-nav-item {
-        opacity: 1;
-        transform: translateY(0);
-        /* Stagger effect handled by CSS delay is tricky, usually JS is better, 
-           but simple transition works fine here */
-    }
-}
-
-
-
-
-
-
-
 
         /* --- HERO SLIDER --- */
         .hvn-slide {
@@ -515,7 +272,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, var(--hvn-bg-dark) 0%, rgba(8, 10, 15, 0.95) 25%, rgba(8, 10, 15, 0.3) 100%);
+            background: linear-gradient(90deg, #050505 0%, rgba(5, 5, 5, 0.95) 25%, rgba(5, 5, 5, 0.3) 100%);
             z-index: 2;
         }
 
@@ -552,7 +309,7 @@
             width: 30px;
             height: 3px;
             background: var(--hvn-primary);
-            box-shadow: 0 0 15px var(--hvn-primary);
+            box-shadow: 0 0 10px var(--hvn-primary);
         }
 
         .tb-br::after {
@@ -563,7 +320,7 @@
             width: 30px;
             height: 3px;
             background: var(--hvn-accent);
-            box-shadow: 0 0 15px var(--hvn-accent);
+            box-shadow: 0 0 10px var(--hvn-accent);
         }
 
         .hvn-hero-container {
@@ -598,19 +355,20 @@
             align-items: center;
             gap: 12px;
             color: var(--hvn-primary);
-            font-size: 1rem;
+            font-size: 0.9rem;
             letter-spacing: 4px;
             text-transform: uppercase;
             margin-bottom: 20px;
             font-weight: 700;
-            text-shadow: 0 0 15px rgba(40, 233, 140, 0.4);
+            text-shadow: 0 0 10px rgba(40, 233, 140, 0.4);
         }
 
         .hvn-hero-title {
-            font-size: clamp(3rem, 6vw, 6rem);
-            line-height: 1;
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 5vw, 5.5rem);
+            line-height: 1.05;
             text-transform: uppercase;
-            font-weight: 700;
+            font-weight: 800;
             margin-bottom: 25px;
             color: var(--hvn-secondary);
             text-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
@@ -623,13 +381,13 @@
         }
 
         .text-highlight-green {
-            color: var(--hvn-primary);
-            text-shadow: 0 0 25px rgba(40, 233, 140, 0.6);
+            color: var(--hvn-green);
+            text-shadow: 0 0 20px rgba(40, 233, 140, 0.5);
         }
 
         .text-highlight-red {
-            color: var(--hvn-accent);
-            text-shadow: 0 0 25px rgba(230, 57, 70, 0.6);
+            color: var(--hvn-red);
+            text-shadow: 0 0 20px rgba(230, 57, 70, 0.5);
         }
 
         .word-mask {
@@ -643,8 +401,8 @@
         }
 
         .hvn-hero-desc {
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.75);
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.8);
             max-width: 550px;
             line-height: 1.7;
             margin-bottom: 45px;
@@ -658,13 +416,13 @@
             align-items: center;
             gap: 15px;
             padding: 16px 45px;
-            background: rgba(40, 233, 140, 0.05);
-            border: 1px solid rgba(40, 233, 140, 0.3);
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             color: var(--hvn-secondary);
             text-decoration: none;
             text-transform: uppercase;
             letter-spacing: 2px;
-            font-weight: 700;
+            font-weight: 600;
             position: relative;
             overflow: hidden;
             transition: 0.3s;
@@ -678,7 +436,7 @@
             left: 0;
             width: 0%;
             height: 100%;
-            background: linear-gradient(90deg, var(--hvn-primary), #1EB36C);
+            background: linear-gradient(90deg, var(--hvn-primary), var(--hvn-green));
             z-index: -1;
             transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
@@ -686,7 +444,7 @@
         .hvn-btn-glow:hover {
             border-color: var(--hvn-primary);
             color: #000;
-            box-shadow: 0 0 40px rgba(40, 233, 140, 0.4);
+            box-shadow: 0 0 30px rgba(40, 233, 140, 0.3);
         }
 
         .hvn-btn-glow:hover::before {
@@ -770,7 +528,7 @@
 
         /* --- ABOUT SECTION STYLES --- */
         #hvn-about {
-            background: #020202;
+            background: #000;
             position: relative;
             perspective: 1500px;
         }
@@ -796,16 +554,18 @@
         }
 
         .about-sub {
+            font-family: var(--font-body);
             font-weight: 700;
-            color: var(--hvn-primary);
+            color: var(--hvn-green);
             letter-spacing: 4px;
             text-transform: uppercase;
             margin-bottom: 20px;
             display: block;
-            text-shadow: 0 0 15px rgba(40, 233, 140, 0.4);
+            text-shadow: 0 0 10px rgba(40, 233, 140, 0.6);
         }
 
         .about-heading {
+            font-family: var(--font-heading);
             font-size: 3.5rem;
             font-weight: 700;
             line-height: 1.1;
@@ -815,8 +575,8 @@
         }
 
         .about-heading span {
-            color: var(--hvn-accent);
-            text-shadow: 0 0 20px rgba(230, 57, 70, 0.4);
+            color: var(--hvn-red);
+            text-shadow: 0 0 15px rgba(230, 57, 70, 0.5);
         }
 
         .about-desc {
@@ -824,7 +584,7 @@
             color: rgba(255, 255, 255, 0.7);
             line-height: 1.7;
             margin-bottom: 40px;
-            border-left: 2px solid var(--hvn-primary);
+            border-left: 2px solid var(--hvn-green);
             padding-left: 25px;
             background: linear-gradient(90deg, rgba(40, 233, 140, 0.05), transparent);
         }
@@ -881,7 +641,7 @@
             left: 0;
             width: 2px;
             height: 0%;
-            background: var(--hvn-primary);
+            background: var(--hvn-green);
             transition: 0.5s;
         }
 
@@ -890,18 +650,18 @@
         }
 
         .stat-item h3 {
-            font-family: 'Rajdhani', sans-serif;
-            font-size: 3.5rem;
+            font-family: var(--font-heading);
+            font-size: 3rem;
             color: #fff;
             margin: 0;
-            font-weight: 700;
+            font-weight: 800;
             display: flex;
             align-items: baseline;
         }
 
         .stat-item h3 span {
-            color: var(--hvn-primary);
-            font-size: 2rem;
+            color: var(--hvn-green);
+            font-size: 1.5rem;
             margin-left: 5px;
         }
 
@@ -915,7 +675,7 @@
 
         /* --- LEADERSHIP SLIDER --- */
         #hvn-leadership {
-            background: #05070a;
+            background: #020202;
             padding: 100px 0;
             overflow: hidden;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -939,6 +699,7 @@
         }
 
         .leadership-text h2 {
+            font-family: var(--font-heading);
             font-size: 3.5rem;
             text-transform: uppercase;
             line-height: 1.1;
@@ -946,7 +707,7 @@
         }
 
         .leadership-text h2 span {
-            color: var(--hvn-primary);
+            color: var(--hvn-green);
         }
 
         .leadership-text p {
@@ -954,7 +715,7 @@
             font-size: 1rem;
             line-height: 1.6;
             margin-bottom: 40px;
-            border-left: 2px solid var(--hvn-accent);
+            border-left: 2px solid var(--hvn-red);
             padding-left: 20px;
         }
 
@@ -978,9 +739,9 @@
         }
 
         .arrow-btn:hover {
-            background: var(--hvn-primary);
+            background: var(--hvn-green);
             color: #000;
-            border-color: var(--hvn-primary);
+            border-color: var(--hvn-green);
             transform: scale(1.1);
         }
 
@@ -1018,8 +779,8 @@
             filter: grayscale(0%);
             opacity: 1;
             transform: scale(1);
-            box-shadow: 0 10px 40px rgba(40, 233, 140, 0.1);
-            border-color: var(--hvn-primary);
+            box-shadow: 0 10px 40px rgba(40, 233, 140, 0.15);
+            border-color: var(--hvn-green);
             z-index: 2;
         }
 
@@ -1052,17 +813,16 @@
         }
 
         .leader-name {
-            font-family: 'Rajdhani', sans-serif;
-            font-weight: 700;
-            font-size: 1.8rem;
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
             color: #fff;
             margin: 0;
             text-transform: uppercase;
         }
 
         .leader-role {
-            color: var(--hvn-primary);
-            font-size: 0.9rem;
+            color: var(--hvn-green);
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-top: 5px;
@@ -1070,104 +830,9 @@
             font-weight: 700;
         }
 
-        /* --- LEADERSHIP SECTION MOBILE RESPONSIVE FIX (FINAL) --- */
-        @media (max-width: 992px) {
-            #hvn-leadership {
-                padding: 50px 0 !important;
-                height: auto !important;
-                overflow: visible !important;
-            }
-
-            .leadership-container {
-                flex-direction: column !important;
-                align-items: center !important;
-                padding: 0 !important;
-                display: flex !important;
-                gap: 30px !important;
-                width: 100% !important;
-                max-width: 100% !important;
-            }
-
-            .leadership-text {
-                width: 100% !important;
-                max-width: 100% !important;
-                padding: 0 20px !important;
-                text-align: center !important;
-                margin-bottom: 10px !important;
-            }
-
-            .leadership-text h2 {
-                font-size: 2.2rem !important;
-            }
-
-            .leadership-text p {
-                border-left: none !important;
-                padding-left: 0 !important;
-                font-size: 0.95rem !important;
-                max-width: 500px !important;
-                margin-left: auto !important;
-                margin-right: auto !important;
-            }
-
-            .slider-arrows {
-                display: none !important;
-            }
-
-            .leadership-slider-wrapper {
-                width: 100% !important;
-                height: auto !important;
-                display: block !important;
-                overflow-x: auto !important;
-                overflow-y: hidden !important;
-                padding: 10px 0 30px 0 !important;
-                -webkit-overflow-scrolling: touch;
-                scrollbar-width: none;
-            }
-
-            .leadership-slider-wrapper::-webkit-scrollbar {
-                display: none;
-            }
-
-            .leader-card-track {
-                display: flex !important;
-                width: max-content !important;
-                gap: 20px !important;
-                padding: 0 25px !important;
-                transform: none !important;
-            }
-
-            .leader-card {
-                flex: 0 0 auto !important;
-                width: 280px !important;
-                min-width: 280px !important;
-                height: 420px !important;
-                margin: 0 !important;
-                opacity: 1 !important;
-                filter: none !important;
-                transform: none !important;
-                border: 1px solid rgba(255, 255, 255, 0.15) !important;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
-            }
-
-            .leader-info {
-                opacity: 1 !important;
-                transform: translateY(0) !important;
-                background: linear-gradient(0deg, #000 10%, rgba(0, 0, 0, 0.8) 80%, transparent 100%) !important;
-                padding: 20px !important;
-            }
-
-            .leader-name {
-                font-size: 1.4rem !important;
-            }
-
-            .leader-role {
-                font-size: 0.8rem !important;
-            }
-        }
-
         /* --- PRODUCTS SECTION STYLES --- */
         #hvn-products {
-            background: #080a0f;
+            background: #050505;
             padding-top: 100px;
             background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
             background-size: 60px 60px;
@@ -1181,12 +846,13 @@
         }
 
         .section-header h2 {
+            font-family: var(--font-heading);
             font-size: 4rem;
             text-transform: uppercase;
         }
 
         .section-header h2 span {
-            color: var(--hvn-accent);
+            color: var(--hvn-red);
         }
 
         .bento-grid {
@@ -1203,7 +869,6 @@
             cursor: pointer;
             transition: 0.5s;
             background: #111;
-            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .bento-bg {
@@ -1229,7 +894,7 @@
             left: 0;
             width: 100%;
             padding: 30px;
-            background: linear-gradient(0deg, rgba(0, 0, 0, 0.95), transparent);
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.9), transparent);
             transform: translateY(20px);
             transition: 0.4s;
         }
@@ -1239,6 +904,7 @@
         }
 
         .bento-title {
+            font-family: var(--font-heading);
             font-size: 1.8rem;
             margin-bottom: 10px;
             color: #fff;
@@ -1263,12 +929,12 @@
             width: 50px;
             height: 50px;
             background: rgba(0, 0, 0, 0.5);
-            border: 1px solid var(--hvn-primary);
+            border: 1px solid var(--hvn-green);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--hvn-primary);
+            color: var(--hvn-green);
             font-size: 1.2rem;
             z-index: 2;
         }
@@ -1306,8 +972,8 @@
         .hvn-modal-content {
             width: 90%;
             max-width: 900px;
-            background: #080a0f;
-            border: 1px solid var(--hvn-primary);
+            background: #050505;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             display: grid;
             grid-template-columns: 1fr 1fr;
             overflow: hidden;
@@ -1341,11 +1007,12 @@
 
         .hvn-modal-icon {
             font-size: 2.5rem;
-            color: var(--hvn-primary);
+            color: var(--hvn-green);
             margin-bottom: 20px;
         }
 
         .hvn-modal-text h2 {
+            font-family: var(--font-heading);
             font-size: 2.5rem;
             margin-bottom: 20px;
         }
@@ -1368,13 +1035,13 @@
         }
 
         .hvn-modal-close:hover {
-            color: var(--hvn-accent);
+            color: var(--hvn-red);
             transform: rotate(90deg);
         }
 
         /* --- INFRASTRUCTURE SECTION --- */
         #hvn-infrastructure {
-            background: #05070a;
+            background: #080808;
             padding: 0;
             height: 100vh;
             display: flex;
@@ -1399,13 +1066,14 @@
         }
 
         .infra-header h2 {
+            font-family: var(--font-heading);
             font-size: clamp(2rem, 5vw, 4rem);
             text-transform: uppercase;
             margin: 0;
         }
 
         .infra-header span {
-            color: var(--hvn-primary);
+            color: var(--hvn-green);
         }
 
         .panels-wrapper {
@@ -1433,7 +1101,7 @@
         }
 
         .panel:hover .panel-content h3 {
-            color: var(--hvn-primary);
+            color: var(--hvn-green);
             transform: scale(1.1);
         }
 
@@ -1510,6 +1178,7 @@
         }
 
         .panel-content h3 {
+            font-family: var(--font-heading);
             font-size: 2.5rem;
             color: #fff;
             text-transform: uppercase;
@@ -1539,312 +1208,11 @@
 
         .spec-tag {
             padding: 5px 10px;
-            border: 1px solid var(--hvn-primary);
-            color: var(--hvn-primary);
+            border: 1px solid var(--hvn-green);
+            color: var(--hvn-green);
             font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-        }
-
-        /* --- GLOBAL FOOTPRINT SECTION (FIXED TOOLTIPS) --- */
-        #hvn-global {
-            background: #020202;
-            padding: 100px 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .global-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 5vw;
-            position: relative;
-            z-index: 2;
-        }
-
-        .global-map-wrapper {
-            position: relative;
-            width: 100%;
-            height: 600px;
-            background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_blank_without_borders.svg');
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            filter: invert(1) opacity(0.2);
-            margin-top: 50px;
-        }
-
-        .map-dot {
-            position: absolute;
-            width: 12px;
-            height: 12px;
-            background: var(--hvn-primary);
-            border-radius: 50%;
-            cursor: pointer;
-            box-shadow: 0 0 15px var(--hvn-primary);
-            transition: 0.3s;
-            z-index: 5;
-        }
-
-        .map-dot:hover {
-            transform: scale(1.5);
-            background: #fff;
-            z-index: 10;
-        }
-
-        .map-dot::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 30px;
-            height: 30px;
-            border: 1px solid var(--hvn-primary);
-            border-radius: 50%;
-            animation: pulseDot 2s infinite;
-        }
-
-        @keyframes pulseDot {
-            0% {
-                width: 12px;
-                height: 12px;
-                opacity: 1;
-            }
-
-            100% {
-                width: 40px;
-                height: 40px;
-                opacity: 0;
-            }
-        }
-
-        /* Sample Locations */
-        .loc-usa {
-            top: 35%;
-            left: 22%;
-        }
-
-        .loc-germany {
-            top: 30%;
-            left: 52%;
-        }
-
-        .loc-india {
-            top: 45%;
-            left: 68%;
-        }
-
-        .loc-japan {
-            top: 38%;
-            left: 85%;
-        }
-
-        .loc-brazil {
-            top: 70%;
-            left: 30%;
-        }
-
-        .map-tooltip {
-            position: absolute;
-            bottom: 25px;
-            left: 50%;
-            transform: translateX(-50%) translateY(10px);
-            background: rgba(0, 0, 0, 0.9);
-            border: 1px solid var(--hvn-primary);
-            padding: 15px 20px;
-            border-radius: 4px;
-            color: #fff;
-            white-space: nowrap;
-            font-size: 0.9rem;
-            opacity: 0;
-            pointer-events: none;
-            transition: 0.3s;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-align: left;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
-        }
-
-        .map-dot:hover .map-tooltip {
-            opacity: 1;
-            transform: translateX(-50%) translateY(0);
-        }
-
-        .global-stats {
-            display: flex;
-            justify-content: space-around;
-            margin-top: -50px;
-            position: relative;
-            z-index: 3;
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(10px);
-            padding: 40px;
-            border-radius: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            max-width: 1000px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .global-stat-item {
-            text-align: center;
-        }
-
-        .global-stat-number {
-            font-size: 3rem;
-            color: var(--hvn-primary);
-            font-weight: 800;
-            display: block;
-        }
-
-        .global-stat-label {
-            color: rgba(255, 255, 255, 0.7);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.85rem;
-        }
-
-        /* --- NEW SECTION: "MASTERPIECE" (Expanding Panels - replacing Gallery) --- */
-        #hvn-masterpiece {
-            background: #020202;
-            padding: 0;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .masterpiece-header {
-            position: absolute;
-            top: 100px;
-            width: 100%;
-            text-align: center;
-            z-index: 10;
-            pointer-events: none;
-        }
-
-        .masterpiece-header h2 {
-            font-size: 3rem;
-            color: #fff;
-            text-transform: uppercase;
-            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-        }
-
-        .hvn-flex-gallery {
-            display: flex;
-            width: 100%;
-            height: 100%;
-        }
-
-        .flex-panel {
-            flex: 1;
-            position: relative;
-            transition: flex 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-            overflow: hidden;
-            cursor: pointer;
-            border-right: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .flex-panel:last-child {
-            border-right: none;
-        }
-
-        .flex-panel:hover {
-            flex: 3;
-        }
-
-        .flex-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            transition: 0.6s;
-            filter: grayscale(100%) brightness(0.4);
-        }
-
-        .flex-panel:hover .flex-bg {
-            filter: grayscale(0%) brightness(0.8);
-            transform: scale(1.05);
-        }
-
-        .flex-content {
-            position: absolute;
-            bottom: 50px;
-            left: 50px;
-            z-index: 2;
-            opacity: 0.5;
-            transition: 0.4s;
-            transform: translateY(0);
-        }
-
-        .flex-panel:hover .flex-content {
-            opacity: 1;
-            transform: translateY(-20px);
-        }
-
-        .panel-heading {
-            font-size: 2.5rem;
-            color: #fff;
-            margin-bottom: 10px;
-            white-space: nowrap;
-        }
-
-        .panel-text {
-            font-size: 1rem;
-            color: rgba(255, 255, 255, 0.8);
-            max-width: 0;
-            overflow: hidden;
-            transition: max-width 0.6s ease 0.1s, opacity 0.4s;
-            opacity: 0;
-            white-space: nowrap;
-        }
-
-        .flex-panel:hover .panel-text {
-            max-width: 500px;
-            opacity: 1;
-        }
-
-        @media (max-width: 992px) {
-            .hvn-flex-gallery {
-                flex-direction: column;
-            }
-
-            .flex-panel {
-                width: 100%;
-                border-right: none;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            }
-
-            .masterpiece-header {
-                position: relative;
-                top: 0;
-                padding-top: 100px;
-                padding-bottom: 20px;
-            }
-
-            #hvn-masterpiece {
-                height: auto;
-                min-height: 100vh;
-                display: block;
-            }
-
-            .flex-panel {
-                height: 25vh;
-            }
-
-            .flex-panel:hover {
-                height: 50vh;
-                flex: none;
-            }
         }
 
         /* --- SUSTAINABILITY SECTION --- */
@@ -1896,7 +1264,7 @@
 
         .sus-card:hover {
             transform: translateY(-10px);
-            border-color: var(--hvn-primary);
+            border-color: var(--hvn-green);
         }
 
         .sus-card-left .sus-card-bg {
@@ -1925,7 +1293,7 @@
             width: 100%;
             height: 50%;
             object-fit: cover;
-            border-bottom: 2px solid var(--hvn-primary);
+            border-bottom: 2px solid var(--hvn-green);
         }
 
         .sus-card-right .sus-content {
@@ -1940,12 +1308,13 @@
 
         .sus-icon {
             font-size: 3rem;
-            color: var(--hvn-primary);
+            color: var(--hvn-green);
             margin-bottom: 20px;
             display: inline-block;
         }
 
         .sus-title {
+            font-family: var(--font-heading);
             font-size: 2.5rem;
             color: #fff;
             text-transform: uppercase;
@@ -1960,7 +1329,7 @@
         }
 
         .sus-link {
-            color: var(--hvn-primary);
+            color: var(--hvn-green);
             text-decoration: none;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -1975,7 +1344,7 @@
             transform: translateX(5px);
         }
 
-        /* --- VIDEO SHOWCASE SECTION --- */
+        /* --- VIDEO SHOWCASE SECTION (RESTORED GLITCH TITLE & SCANLINES) --- */
         #hvn-showcase {
             position: relative;
             height: 100vh;
@@ -2013,127 +1382,67 @@
             z-index: 2;
         }
 
-        .glass-card-center {
-            position: relative;
-            z-index: 4;
-            padding: 40px 60px;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 4px;
-            text-align: center;
-            box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
-            overflow: hidden;
-            max-width: 800px;
-            width: 90%;
-        }
-
-        .glass-card-center::after {
-            content: '';
+        .scanlines {
             position: absolute;
             top: 0;
-            left: -100%;
-            width: 50%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transform: skewX(-20deg);
-            animation: shine 5s infinite;
-        }
-
-        @keyframes shine {
-            0% {
-                left: -100%;
-            }
-
-            20% {
-                left: 200%;
-            }
-
-            100% {
-                left: 200%;
-            }
-        }
-
-        .showcase-sub {
-            display: block;
-            color: var(--hvn-primary);
-            font-size: 0.9rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-
-        .showcase-title {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            color: #fff;
-            margin-bottom: 20px;
-            line-height: 1.1;
-            background: linear-gradient(to right, #fff, #bbb);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .play-btn-wrapper {
-            position: relative;
-            width: 80px;
-            height: 80px;
-            margin: 30px auto 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-        }
-
-        .play-btn {
-            width: 60px;
-            height: 60px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #fff;
-            font-size: 1.2rem;
-            transition: 0.3s;
-            position: relative;
-            z-index: 2;
-        }
-
-        .play-pulse {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            left: 0;
             width: 100%;
             height: 100%;
-            border: 1px solid var(--hvn-primary);
-            border-radius: 50%;
-            opacity: 0;
-            animation: pulseRing 2s infinite;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.2));
+            background-size: 100% 4px;
+            z-index: 3;
+            pointer-events: none;
+            opacity: 0.6;
         }
 
-        @keyframes pulseRing {
-            0% {
-                width: 60px;
-                height: 60px;
-                opacity: 1;
-                border-width: 3px;
+        .video-content {
+            position: relative;
+            z-index: 4;
+            max-width: 900px;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .glitch-title {
+            font-family: var(--font-heading);
+            font-size: clamp(3rem, 6vw, 6rem);
+            font-weight: 800;
+            color: #fff;
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+            text-shadow: 2px 2px var(--hvn-red), -2px -2px var(--hvn-green);
+            animation: glitch 1s infinite;
+        }
+
+        @keyframes glitch {
+
+            2%,
+            64% {
+                transform: translate(2px, 0) skew(0deg);
             }
 
-            100% {
-                width: 120px;
-                height: 120px;
-                opacity: 0;
-                border-width: 0px;
+            4%,
+            60% {
+                transform: translate(-2px, 0) skew(0deg);
+            }
+
+            62% {
+                transform: translate(0, 0) skew(5deg);
             }
         }
 
-        .play-btn:hover {
-            background: var(--hvn-primary);
-            color: #000;
-            transform: scale(1.1);
+        .video-desc {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 20px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            display: inline-block;
         }
 
         /* --- CONTACT SECTION (THE COMMAND CENTER) --- */
@@ -2173,6 +1482,7 @@
         }
 
         .contact-info h2 {
+            font-family: var(--font-heading);
             font-size: 3rem;
             color: #fff;
             text-transform: uppercase;
@@ -2180,7 +1490,7 @@
         }
 
         .contact-info h2 span {
-            color: var(--hvn-primary);
+            color: var(--hvn-green);
         }
 
         .contact-desc {
@@ -2202,7 +1512,7 @@
         }
 
         .contact-details-item:hover {
-            border-color: var(--hvn-primary);
+            border-color: var(--hvn-green);
             background: rgba(40, 233, 140, 0.05);
             transform: translateX(10px);
         }
@@ -2211,7 +1521,7 @@
             width: 50px;
             height: 50px;
             background: rgba(40, 233, 140, 0.1);
-            color: var(--hvn-primary);
+            color: var(--hvn-green);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -2260,7 +1570,7 @@
         }
 
         .form-control:focus {
-            border-bottom-color: var(--hvn-primary);
+            border-bottom-color: var(--hvn-green);
             box-shadow: 0 5px 10px -5px rgba(40, 233, 140, 0.2);
         }
 
@@ -2278,11 +1588,11 @@
         .form-control:valid+.form-label {
             top: -15px;
             font-size: 0.75rem;
-            color: var(--hvn-primary);
+            color: var(--hvn-green);
         }
 
         .submit-btn {
-            background: var(--hvn-primary);
+            background: var(--hvn-green);
             color: #000;
             border: none;
             padding: 15px 40px;
@@ -2304,239 +1614,300 @@
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
         }
 
-        /* --- FOOTER (New Design) --- */
-        #hvn-footer {
-            background: #020202;
-            padding: 100px 5vw 40px;
-            position: relative;
-            scroll-snap-align: start;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            overflow: hidden;
-        }
-
-        .footer-watermark {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 15vw;
-            font-weight: 900;
-            color: rgba(255, 255, 255, 0.02);
-            white-space: nowrap;
-            pointer-events: none;
-            font-family: 'Rajdhani', sans-serif;
-            z-index: 0;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1.5fr;
-            gap: 60px;
-            margin-bottom: 60px;
-            max-width: 1400px;
-            margin-left: auto;
-            margin-right: auto;
-            position: relative;
-            z-index: 1;
-        }
-
-        .footer-logo {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: #fff;
-            margin-bottom: 25px;
-            letter-spacing: 2px;
-            display: inline-block;
-        }
-
-        .footer-desc {
-            color: rgba(255, 255, 255, 0.6);
-            line-height: 1.8;
-            max-width: 350px;
-            font-size: 1rem;
-            margin-bottom: 30px;
-        }
-
-        .footer-col h4 {
-            color: #fff;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-            font-size: 1.1rem;
-            letter-spacing: 2px;
-            font-weight: 700;
-        }
-
-        .footer-links {
-            list-style: none;
-            padding: 0;
-        }
-
-        .footer-links li {
-            margin-bottom: 15px;
-        }
-
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.6);
-            text-decoration: none;
-            transition: 0.3s;
-            font-size: 1rem;
-            display: inline-block;
-            position: relative;
-        }
-
-        .footer-links a::before {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: var(--hvn-primary);
-            transition: 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: #fff;
-            transform: translateX(5px);
-        }
-
-        .footer-links a:hover::before {
-            width: 100%;
-        }
-
-        .newsletter-form {
-            position: relative;
-            margin-top: 20px;
-        }
-
-        .newsletter-input {
-            width: 100%;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 15px;
-            color: #fff;
-            font-family: 'Inter', sans-serif;
-            outline: none;
-            transition: 0.3s;
-        }
-
-        .newsletter-input:focus {
-            border-color: var(--hvn-primary);
-            background: rgba(40, 233, 140, 0.05);
-        }
-
-        .newsletter-btn {
-            position: absolute;
-            right: 5px;
-            top: 5px;
-            bottom: 5px;
-            background: var(--hvn-primary);
-            color: #000;
-            border: none;
-            padding: 0 20px;
-            cursor: pointer;
-            font-weight: 700;
-            text-transform: uppercase;
-            font-family: 'Rajdhani', sans-serif;
-            transition: 0.3s;
-        }
-
-        .newsletter-btn:hover {
-            background: #fff;
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .footer-social a {
-            width: 45px;
-            height: 45px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-size: 1.2rem;
-            transition: 0.3s;
-        }
-
-        .footer-social a:hover {
-            background: var(--hvn-primary);
-            color: #000;
-            border-color: var(--hvn-primary);
-            box-shadow: 0 0 20px rgba(40, 233, 140, 0.3);
-            transform: translateY(-3px);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            padding-top: 30px;
-            display: flex;
-            justify-content: space-between;
-            color: rgba(255, 255, 255, 0.4);
-            font-size: 0.9rem;
-            max-width: 1400px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-
         /* --- MOBILE FIXES --- */
         @media (max-width: 992px) {
+            .hvn-main-wrapper {
+                scroll-snap-type: y mandatory;
+                overflow-y: scroll;
+            }
 
-            /* ... existing mobile styles ... */
-            .footer-grid {
+            .hvn-section {
+                min-height: 100vh;
+                height: auto;
+                padding: 100px 5vw 60px 5vw;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                scroll-snap-align: start;
+                scroll-snap-stop: always;
+            }
+
+            #hvn-hero,
+            #hvn-showcase {
+                height: 100vh;
+            }
+
+            .hvn-nav-links,
+            .hvn-menu-btn,
+            .hvn-topbar,
+            #cursor-spotlight {
+                display: none;
+            }
+
+            .hvn-menu-btn {
+                display: block;
+            }
+
+            .hvn-hero-overlay {
+                background: linear-gradient(0deg, #000 0%, rgba(0, 0, 0, 0.95) 40%, rgba(0, 0, 0, 0.5) 100%);
+            }
+
+            .hvn-hero-container {
+                align-items: flex-end;
+                padding-bottom: 120px;
+            }
+
+            .hvn-hero-text-content {
+                width: 100%;
+            }
+
+            .hvn-hero-text-content::before {
+                display: none;
+            }
+
+            .tb-tl {
+                top: 100px;
+                left: 20px;
+                width: 60px;
+                height: 60px;
+            }
+
+            .tb-br {
+                bottom: 20px;
+                right: 20px;
+                width: 60px;
+                height: 60px;
+            }
+
+            .hvn-hero-title {
+                font-size: 2.5rem;
+                margin-bottom: 15px;
+            }
+
+            .hvn-hero-desc {
+                font-size: 0.95rem;
+                margin-bottom: 25px;
+                border: none;
+                padding: 0;
+            }
+
+            .slider-nav {
+                right: 30px;
+                bottom: 30px;
+            }
+
+            .hvn-progress-dots {
+                display: flex;
+                right: 15px;
+                gap: 15px;
+            }
+
+            .hvn-dot {
+                width: 5px;
+                height: 5px;
+            }
+
+            .hvn-dot::after {
+                width: 15px;
+                height: 15px;
+            }
+
+            .about-heading {
+                font-size: 2.5rem;
+            }
+
+            .stats-row {
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            .stat-item {
+                width: 100%;
+            }
+
+            .about-img-frame {
+                height: 300px;
+                margin-top: 40px;
+            }
+
+            .bento-grid {
+                display: flex;
+                flex-direction: column;
+                height: auto;
+            }
+
+            .bento-card {
+                height: 300px;
+            }
+
+            .section-header h2 {
+                font-size: clamp(2.5rem, 6vw, 4rem);
+            }
+
+            .bento-desc {
+                height: auto;
+                margin-top: 10px;
+            }
+
+            .hvn-modal-content {
+                grid-template-columns: 1fr;
+                width: 95%;
+                max-height: 90vh;
+                overflow-y: auto;
+            }
+
+            .hvn-modal-img-wrapper {
+                height: 200px;
+                min-height: 200px;
+            }
+
+            /* Infrastructure Mobile */
+            #hvn-infrastructure {
+                height: auto;
+                padding: 100px 0 0 0;
+            }
+
+            .infra-container {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .infra-header h2 {
+                font-size: 2rem;
+                padding: 0 15px;
+                line-height: 1.2;
+                word-wrap: break-word;
+            }
+
+            .panels-wrapper {
+                flex-direction: column;
+                height: auto;
+                display: block;
+            }
+
+            .panel {
+                height: 300px;
+                flex: none;
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                display: block;
+            }
+
+            .panel:hover {
+                flex: none;
+                height: 300px;
+            }
+
+            .panel-content h3 {
+                font-size: 1.8rem;
+                white-space: normal;
+            }
+
+            .panel-details {
+                opacity: 1;
+                transform: none;
+            }
+
+            .panel-desc {
+                display: none;
+            }
+
+            /* Sustainability Mobile */
+            #hvn-sustainability {
+                height: auto;
+                padding: 100px 20px 50px;
+                background-attachment: scroll;
+            }
+
+            .sus-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .sus-card {
+                height: auto;
+                min-height: 400px;
+            }
+
+            /* Leadership Mobile */
+            #hvn-leadership {
+                padding: 60px 0;
+                height: auto;
+            }
+
+            .leadership-container {
+                flex-direction: column;
+                text-align: center;
+                display: block;
+            }
+
+            .leadership-text {
+                max-width: 100%;
+                margin-bottom: 40px;
+                padding-right: 0;
+            }
+
+            .leadership-text p {
+                border-left: none;
+                padding-left: 0;
+            }
+
+            .slider-arrows {
+                justify-content: center;
+                margin-bottom: 30px;
+            }
+
+            .leadership-slider-wrapper {
+                width: 100%;
+                overflow-x: auto;
+                height: auto;
+                padding-bottom: 20px;
+            }
+
+            .leader-card-track {
+                width: max-content;
+                padding-left: 0;
+            }
+
+            .leader-card {
+                min-width: 280px;
+                height: 380px;
+                opacity: 1;
+                filter: grayscale(0%);
+                transform: none;
+            }
+
+            .leader-card.active {
+                transform: none;
+            }
+
+            .leader-info {
+                opacity: 1;
+                transform: none;
+            }
+
+            /* Contact Mobile */
+            .contact-container {
                 grid-template-columns: 1fr;
                 gap: 40px;
-                text-align: center;
             }
 
-            .footer-col h4::after {
-                left: 50%;
-                transform: translateX(-50%);
+            .contact-form-wrapper {
+                padding: 25px;
             }
 
-            .footer-social {
-                justify-content: center;
+            .contact-info h2 {
+                font-size: 2.5rem;
             }
 
-            .floating-socials {
-                display: none;
-                /* Hide floating on mobile to save space */
+            /* Showcase Mobile */
+            .glitch-title {
+                font-size: 3rem;
             }
 
-            .footer-watermark {
-                font-size: 25vw;
-            }
-
-            /* Global Map Mobile */
-            .global-map-wrapper {
-                height: 300px;
-                background-size: contain;
-                margin-top: 30px;
-            }
-
-            .global-stats {
-                flex-direction: column;
-                gap: 30px;
-                margin-top: 20px;
-            }
-
-            /* Hide map dots on very small screens to prevent overlap issues, 
-               or adjust positions if needed. For now, keeping them but maybe smaller. */
-            .map-dot {
-                width: 8px;
-                height: 8px;
-            }
-
-            .map-dot::after {
-                width: 20px;
-                height: 20px;
+            .video-desc {
+                font-size: 1rem;
             }
         }
     </style>
@@ -2547,30 +1918,6 @@
     <div class="hvn-noise-overlay"></div>
     <div id="cursor-spotlight"></div>
 
-    <!-- PRELOADER -->
-    <div id="hvn-preloader">
-        <div class="loader-content-wrapper">
-            <div class="loader-text">
-                <span>H</span><span>V</span><span>N</span>
-                <span
-                    style="color: var(--hvn-primary); margin-left: 10px;">P</span><span>O</span><span>W</span><span>E</span><span>R</span>
-            </div>
-            <div class="loader-bar-bg">
-                <div class="loader-bar-fill"></div>
-            </div>
-            <div class="loader-percentage">0%</div>
-        </div>
-    </div>
-
-    <!-- FLOATING SOCIAL WIDGET -->
-    <div class="floating-socials">
-        <a href="https://wa.me/919897054321" target="_blank" class="float-icon whatsapp" title="WhatsApp"><i
-                class="fa-brands fa-whatsapp"></i></a>
-        <a href="tel:+919897054321" class="float-icon phone" title="Call Us"><i class="fa-solid fa-phone"></i></a>
-        <a href="mailto:info@hvnpowercare.com" class="float-icon mail" title="Email Us"><i
-                class="fa-solid fa-envelope"></i></a>
-    </div>
-
     <header id="mainHeader">
         <div class="hvn-topbar">
             <div class="hvn-top-left"><span><i class="fa-solid fa-envelope"></i> info@hvnpowercare.com</span><span><i
@@ -2580,17 +1927,13 @@
             </div>
         </div>
         <nav class="hvn-navbar">
-            <!-- Note: Placeholder logo since original asset may not load in preview -->
-            <div class="hvn-logo-container">
-                <img src="assets/images/logo/hvn-logo-text.png" alt="">
-            </div>
+            <div class="hvn-logo-container"><img src="assets/images/logo/hvn-logo-text.png" alt="HVN Powercare"></div>
             <div class="hvn-nav-links">
                 <a href="#hvn-hero" class="hvn-nav-item">Home</a>
                 <a href="#hvn-about" class="hvn-nav-item">About Us</a>
                 <a href="#hvn-leadership" class="hvn-nav-item">Leadership</a>
                 <a href="#hvn-products" class="hvn-nav-item">Products</a>
                 <a href="#hvn-infrastructure" class="hvn-nav-item">Infrastructure</a>
-                <a href="#hvn-masterpiece" class="hvn-nav-item">Innovation</a>
                 <a href="#hvn-sustainability" class="hvn-nav-item">Sustainability</a>
                 <a href="#hvn-showcase" class="hvn-nav-item">Showcase</a>
                 <a href="#hvn-contact" class="hvn-nav-item">Contact</a>
@@ -2605,8 +1948,6 @@
         <div class="hvn-dot" onclick="scrollToSection('hvn-leadership')"></div>
         <div class="hvn-dot" onclick="scrollToSection('hvn-products')"></div>
         <div class="hvn-dot" onclick="scrollToSection('hvn-infrastructure')"></div>
-        <div class="hvn-dot" onclick="scrollToSection('hvn-masterpiece')"></div>
-        <div class="hvn-dot" onclick="scrollToSection('hvn-global')"></div>
         <div class="hvn-dot" onclick="scrollToSection('hvn-sustainability')"></div>
         <div class="hvn-dot" onclick="scrollToSection('hvn-showcase')"></div>
         <div class="hvn-dot" onclick="scrollToSection('hvn-contact')"></div>
@@ -2634,9 +1975,7 @@
             <div class="tech-border tb-tl"></div>
             <div class="tech-border tb-br"></div>
             <div class="hvn-slide active">
-                <div class="hvn-slide-bg"
-                    style="background-image: url('assets/images/banner/slider-1.jpeg');">
-                </div>
+                <div class="hvn-slide-bg" style="background-image: url('assets/images/banner/slider-1.jpeg');"></div>
                 <div class="hvn-hero-overlay"></div>
                 <div class="hvn-hero-container">
                     <div class="hvn-hero-text-content">
@@ -2653,9 +1992,7 @@
                 </div>
             </div>
             <div class="hvn-slide">
-                <div class="hvn-slide-bg"
-                    style="background-image: url('assets/images/banner/slider-2.jpeg');">
-                </div>
+                <div class="hvn-slide-bg" style="background-image: url('assets/images/banner/slider-2.jpeg');"></div>
                 <div class="hvn-hero-overlay"></div>
                 <div class="hvn-hero-container">
                     <div class="hvn-hero-text-content">
@@ -2671,9 +2008,7 @@
                 </div>
             </div>
             <div class="hvn-slide">
-                <div class="hvn-slide-bg"
-                    style="background-image: url('assets/images/banner/slider-3.jpeg');">
-                </div>
+                <div class="hvn-slide-bg" style="background-image: url('assets/images/banner/slider-3.jpeg');"></div>
                 <div class="hvn-hero-overlay"></div>
                 <div class="hvn-hero-container">
                     <div class="hvn-hero-text-content">
@@ -2729,8 +2064,7 @@
                             <div class="corner c-tr"></div>
                             <div class="corner c-bl"></div>
                             <div class="corner c-br"></div>
-                            <div class="about-img-frame"><img
-                                    src="assets/images/abt/abt-img.jpeg"
+                            <div class="about-img-frame"><img src="assets/images/abt/abt-img.jpeg"
                                     alt="Aluminium Casting" class="about-img"></div>
                         </div>
                     </div>
@@ -2853,8 +2187,7 @@
                 </div>
                 <div class="panels-wrapper">
                     <div class="panel">
-                        <div class="panel-bg"
-                            style="background-image: url('https://www.castingsforindustry.com/wp-content/uploads/2023/02/slider-crucible.webp');">
+                        <div class="panel-bg" style="background-image: url('assets/images/factory/die-casting.jpeg');">
                         </div>
                         <div class="panel-overlay"></div>
                         <div class="panel-content"><span class="panel-num">01</span>
@@ -2896,123 +2229,6 @@
                                         class="spec-tag">Rapid Proto</span></div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION: MASTERPIECE (EXPANDING FLEX GALLERY) -->
-        <section id="hvn-masterpiece" class="hvn-section">
-            <div class="masterpiece-header">
-                <h2>THE <span>STANDARD</span></h2>
-            </div>
-            <div class="hvn-flex-gallery">
-                <div class="flex-panel">
-                    <div class="flex-bg"
-                        style="background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop');">
-                    </div>
-                    <div class="flex-content">
-                        <h3 class="panel-heading">AI PRECISION</h3>
-                        <p class="panel-text">Automated robotics ensuring zero-defect manufacturing.</p>
-                    </div>
-                </div>
-                <div class="flex-panel">
-                    <div class="flex-bg"
-                        style="background-image: url('https://img-cdn.thepublive.com/filters:format(webp)/industry-wired/media/post_attachments/wp-content/uploads/2020/05/Material-Science.jpg');">
-                    </div>
-                    <div class="flex-content">
-                        <h3 class="panel-heading">MATERIAL SCIENCE</h3>
-                        <p class="panel-text">Advanced alloys for lighter, stronger components.</p>
-                    </div>
-                </div>
-                <div class="flex-panel">
-                    <div class="flex-bg"
-                        style="background-image: url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2069&auto=format&fit=crop');">
-                    </div>
-                    <div class="flex-content">
-                        <h3 class="panel-heading">SMART LOGISTICS</h3>
-                        <p class="panel-text">Just-in-time delivery with real-time tracking.</p>
-                    </div>
-                </div>
-                <div class="flex-panel">
-                    <div class="flex-bg"
-                        style="background-image: url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2070&auto=format&fit=crop');">
-                    </div>
-                    <div class="flex-content">
-                        <h3 class="panel-heading">QUALITY CONTROL</h3>
-                        <p class="panel-text">Rigorous testing at every stage of production.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION: GLOBAL PRESENCE (NEW) -->
-        <section id="hvn-global" class="hvn-section">
-            <div class="container hvn-about-container">
-                <div class="products-header reveal-global">
-                    <span class="about-sub">Global Reach</span>
-                    <h2 class="about-heading">Connected <span>Worldwide</span></h2>
-                </div>
-                <div class="global-map-wrapper reveal-global">
-                    <!-- Dots -->
-                    <div class="map-dot loc-usa">
-                        <div class="map-tooltip">
-                            <i class="fa-solid fa-flag-usa" style="color: var(--hvn-primary); margin-right: 5px;"></i>
-                            <div>
-                                <strong>USA Office</strong><br>
-                                <span style="font-size: 0.7em; color: #ccc;">New York, NY</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="map-dot loc-germany">
-                        <div class="map-tooltip">
-                            <i class="fa-solid fa-industry" style="color: var(--hvn-primary); margin-right: 5px;"></i>
-                            <div>
-                                <strong>Germany HQ</strong><br>
-                                <span style="font-size: 0.7em; color: #ccc;">Munich</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="map-dot loc-india">
-                        <div class="map-tooltip">
-                            <i class="fa-solid fa-cogs" style="color: var(--hvn-primary); margin-right: 5px;"></i>
-                            <div>
-                                <strong>India Mfg. Unit</strong><br>
-                                <span style="font-size: 0.7em; color: #ccc;">Manesar</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="map-dot loc-japan">
-                        <div class="map-tooltip">
-                            <i class="fa-solid fa-handshake" style="color: var(--hvn-primary); margin-right: 5px;"></i>
-                            <div>
-                                <strong>Japan Sales</strong><br>
-                                <span style="font-size: 0.7em; color: #ccc;">Tokyo</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="map-dot loc-brazil">
-                        <div class="map-tooltip">
-                            <i class="fa-solid fa-warehouse" style="color: var(--hvn-primary); margin-right: 5px;"></i>
-                            <div>
-                                <strong>Brazil Hub</strong><br>
-                                <span style="font-size: 0.7em; color: #ccc;">São Paulo</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="global-stats reveal-global">
-                    <div class="global-stat-item">
-                        <span class="global-stat-number counter" data-target="15">0</span>
-                        <span class="global-stat-label">Countries Exported</span>
-                    </div>
-                    <div class="global-stat-item">
-                        <span class="global-stat-number counter" data-target="4">0</span>
-                        <span class="global-stat-label">Global Offices</span>
-                    </div>
-                    <div class="global-stat-item">
-                        <span class="global-stat-number counter" data-target="500">0</span>
-                        <span class="global-stat-label">Global Clients</span>
                     </div>
                 </div>
             </div>
@@ -3060,16 +2276,8 @@
             </div>
 
             <div class="container video-content">
-                <div class="glass-card-center" style="margin: 0 auto;">
-                    <div class="showcase-sub">THE PROCESS</div>
-                    <h2 class="showcase-title">Cinematic <br> <span style="color: var(--hvn-primary)">Excellence</span>
-                    </h2>
-                    <div class="video-desc">Manufacturing in Motion</div>
-                    <div class="play-btn-wrapper">
-                        <div class="play-pulse"></div>
-                        <div class="play-btn"><i class="fa-solid fa-play"></i></div>
-                    </div>
-                </div>
+                <h2 class="glitch-title">Cinematic <br> <span style="color: var(--hvn-green)">Excellence</span></h2>
+                <div class="video-desc">Manufacturing in Motion</div>
             </div>
         </section>
 
@@ -3126,54 +2334,6 @@
             </div>
         </section>
 
-        <!-- FOOTER (Revamped Sexy Design) -->
-        <footer id="hvn-footer">
-            <div class="footer-watermark">POWER</div>
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <div class="footer-logo">HVN POWERCARE</div>
-                    <p class="footer-desc">Leading manufacturer of high-precision aluminium die-cast components for the
-                        global automotive and energy sectors.</p>
-                    <div class="footer-social">
-                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                    </div>
-                </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="#hvn-about">About Us</a></li>
-                        <li><a href="#hvn-products">Products</a></li>
-                        <li><a href="#hvn-infrastructure">Infrastructure</a></li>
-                        <li><a href="#hvn-sustainability">Sustainability</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact</h4>
-                    <ul class="footer-links">
-                        <li><a href="mailto:info@hvnpowercare.com">info@hvnpowercare.com</a></li>
-                        <li><a href="tel:+919897054321">+91 98970 54321</a></li>
-                        <li>Manesar, Haryana, India</li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Stay Connected</h4>
-                    <p style="color: rgba(255,255,255,0.5); font-size: 0.9rem; margin-bottom: 10px;">Subscribe to our
-                        newsletter for latest updates.</p>
-                    <form class="newsletter-form">
-                        <input type="email" class="newsletter-input" placeholder="Enter your email">
-                        <button class="newsletter-btn">Join</button>
-                    </form>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <span>&copy; 2024 HVN Powercare Pvt. Ltd. All rights reserved.</span>
-                <span>Privacy Policy | Terms of Service</span>
-            </div>
-        </footer>
-
     </main>
 
     <!-- LOGIC -->
@@ -3203,16 +2363,14 @@
             scene.add(core);
 
             const shellGeometry = new THREE.IcosahedronGeometry(12, 1);
-            // Updated wireframe color to Cyan (0x00F3FF)
-            const shellMaterial = new THREE.MeshBasicMaterial({ color: 0x00F3FF, wireframe: true, transparent: true, opacity: 0.15 });
+            const shellMaterial = new THREE.MeshBasicMaterial({ color: 0x28E98C, wireframe: true, transparent: true, opacity: 0.15 });
             const shell = new THREE.Mesh(shellGeometry, shellMaterial);
             scene.add(shell);
 
             const ambientLight = new THREE.AmbientLight(0x404040);
             scene.add(ambientLight);
-            // Updated light colors: Point 1 to Cyan, Point 2 to Orange
-            const pointLight1 = new THREE.PointLight(0x00F3FF, 2, 100); pointLight1.position.set(20, 20, 20); scene.add(pointLight1);
-            const pointLight2 = new THREE.PointLight(0xFF5500, 2, 100); pointLight2.position.set(-20, -10, 10); scene.add(pointLight2);
+            const pointLight1 = new THREE.PointLight(0x28E98C, 2, 100); pointLight1.position.set(20, 20, 20); scene.add(pointLight1);
+            const pointLight2 = new THREE.PointLight(0xE63946, 2, 100); pointLight2.position.set(-20, -10, 10); scene.add(pointLight2);
 
             let mouseX = 0, mouseY = 0;
             function animate() {
@@ -3310,74 +2468,14 @@
         }
 
         // --- 6. INIT & OBSERVER ---
-        // PRELOADER LOGIC INTEGRATED HERE
         window.onload = function () {
-            // Preloader Animation Sequence
-            const tl = gsap.timeline();
-            const counter = { value: 0 }; // Proxy object for counting
-
-            tl.to(".loader-text span", {
-                y: 0,
-                opacity: 1,
-                duration: 0.8,
-                stagger: 0.1,
-                ease: "power3.out"
-            })
-                .to(".loader-bar-fill", {
-                    width: "100%",
-                    duration: 1.5,
-                    ease: "power2.inOut"
-                }, "-=0.5")
-                .to(".loader-percentage", {
-                    opacity: 1,
-                    duration: 0.5
-                }, "-=1.5")
-                .to(counter, {
-                    value: 100,
-                    duration: 1.5,
-                    onUpdate: function () {
-                        document.querySelector(".loader-percentage").innerHTML = Math.ceil(counter.value) + "%";
-                    }
-                }, "-=1.5")
-                .to("#hvn-preloader", {
-                    y: "-100%",
-                    duration: 1,
-                    ease: "power4.inOut",
-                    delay: 0.2
-                })
-                // Explicitly set header to visible at start of its animation
-                .fromTo("header",
-                    { y: -100, opacity: 0 },
-                    { y: 0, opacity: 1, duration: 1, ease: "power3.out" }
-                    , "-=0.5")
-                // Animate Floating Socials
-                .fromTo(".floating-socials",
-                    { x: -100, opacity: 0 },
-                    { x: 0, opacity: 1, duration: 1, ease: "back.out(1.7)" }
-                    , "-=0.5")
-                .from(".hvn-progress-dots", {
-                    x: 50,
-                    opacity: 0,
-                    duration: 1
-                }, "-=0.8")
-                .from(".tb-tl", {
-                    x: -50,
-                    y: -50,
-                    opacity: 0,
-                    duration: 1.5
-                }, "-=0.8")
-                .from(".tb-br", {
-                    x: 50,
-                    y: 50,
-                    opacity: 0,
-                    duration: 1.5
-                }, "-=1.3")
-                .call(() => {
-                    // Initialize other components after preloader
-                    animateSlide(0);
-                    initAbout3D();
-                    initTilt();
-                });
+            gsap.from("header", { y: -100, opacity: 0, duration: 1.2, ease: "power3.out" });
+            gsap.from(".hvn-progress-dots", { x: 50, opacity: 0, duration: 1, delay: 0.5 });
+            gsap.from(".tb-tl", { x: -50, y: -50, opacity: 0, duration: 1.5, delay: 0.2 });
+            gsap.from(".tb-br", { x: 50, y: 50, opacity: 0, duration: 1.5, delay: 0.4 });
+            animateSlide(0);
+            initAbout3D();
+            initTilt();
         };
 
         const sections = document.querySelectorAll('.hvn-section');
@@ -3392,11 +2490,9 @@
                     if (id === 'hvn-leadership') idx = 2;
                     if (id === 'hvn-products') idx = 3;
                     if (id === 'hvn-infrastructure') idx = 4;
-                    if (id === 'hvn-masterpiece') idx = 5;
-                    if (id === 'hvn-global') idx = 6;
-                    if (id === 'hvn-sustainability') idx = 7;
-                    if (id === 'hvn-showcase') idx = 8;
-                    if (id === 'hvn-contact') idx = 9;
+                    if (id === 'hvn-sustainability') idx = 5;
+                    if (id === 'hvn-showcase') idx = 6;
+                    if (id === 'hvn-contact') idx = 7;
                     if (dots[idx]) dots[idx].classList.add('active');
 
                     if (id === 'hvn-about') {
@@ -3420,14 +2516,6 @@
                     if (id === 'hvn-infrastructure') {
                         gsap.fromTo(".panel", { y: 100, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.2, duration: 1, ease: "power3.out" });
                         gsap.fromTo(".infra-header", { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: "power3.out" });
-                    }
-
-                    if (id === 'hvn-global') {
-                        gsap.fromTo(".reveal-global", { y: 50, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.2, duration: 1, ease: "power3.out" });
-                        document.querySelectorAll('.global-stat-number.counter').forEach(counter => {
-                            const target = +counter.getAttribute('data-target');
-                            gsap.to(counter, { innerHTML: target, duration: 2, snap: { innerHTML: 1 }, ease: "circ.out" });
-                        });
                     }
 
                     if (id === 'hvn-sustainability') {
@@ -3456,32 +2544,6 @@
                         ease: "power2.inOut"
                     });
                 }
-            });
-        });
-
-        // --- 8. MOBILE MENU TOGGLE LOGIC ---
-        const menuBtn = document.querySelector('.hvn-menu-btn');
-        const navLinks = document.querySelector('.hvn-nav-links');
-        const navItems = document.querySelectorAll('.hvn-nav-item');
-        const icon = menuBtn.querySelector('i');
-
-        menuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            if (navLinks.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-xmark');
-            } else {
-                icon.classList.remove('fa-xmark');
-                icon.classList.add('fa-bars');
-            }
-        });
-
-        // Close menu when a link is clicked
-        navItems.forEach(item => {
-            item.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                icon.classList.remove('fa-xmark');
-                icon.classList.add('fa-bars');
             });
         });
     </script>
