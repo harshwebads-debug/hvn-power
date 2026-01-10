@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HVN Powercare | Powering Future</title>
 
-    <!-- 1. FONTS (Rajdhani for Tech feel, Inter for Cleanliness) -->
+    <!-- 1. FONTS (Barlow for Industrial/Engineering, Inter for UI) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Rajdhani:wght@500;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Barlow:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
     <!-- favicon -->
     <link rel="shortcut icon" href="assets/images/logo/hvn-logo-text.png" type="image/x-icon">
@@ -27,7 +27,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
 
     <style>
-        /* --- GLOBAL VARIABLES (BRAND COLORS RESTORED) --- */
+        /* --- GLOBAL VARIABLES (REFINED FOR ENGINEERING FEEL) --- */
         :root {
             /* Brand Colors */
             --hvn-green: #28E98C;
@@ -62,7 +62,7 @@
             /* Scroll Snap needs this on body/html in some browsers, but mainly main wrapper */
         }
 
-        /* --- TYPOGRAPHY UPDATES --- */
+        /* --- TYPOGRAPHY UPDATES (Barlow for Technical feel) --- */
         h1,
         h2,
         h3,
@@ -81,9 +81,11 @@
         .footer-logo,
         .global-stat-number,
         .partner-text,
-        .panel-heading {
-            font-family: 'Rajdhani', sans-serif;
-            /* Tech Headings */
+        .panel-heading,
+        .quality-name {
+            font-family: 'Barlow', sans-serif;
+            letter-spacing: 0.5px;
+            /* Tighter tracking for cleaner look */
         }
 
         /* --- PRELOADER --- */
@@ -144,11 +146,12 @@
             height: 100%;
             width: 0%;
             background: var(--hvn-primary);
-            box-shadow: 0 0 20px var(--hvn-primary);
+            /* Reduced shadow for cleaner look */
+            box-shadow: 0 0 5px var(--hvn-primary);
         }
 
         .loader-percentage {
-            font-family: 'Rajdhani', sans-serif;
+            font-family: 'Barlow', sans-serif;
             font-size: 1.2rem;
             color: var(--hvn-primary);
             font-weight: 700;
@@ -156,7 +159,7 @@
             opacity: 0;
         }
 
-        /* Noise Texture */
+        /* Noise Texture - Subtle Engineering Grit */
         .hvn-noise-overlay {
             position: fixed;
             top: 0;
@@ -165,18 +168,18 @@
             height: 100%;
             pointer-events: none;
             z-index: 9999;
-            opacity: 0.04;
+            opacity: 0.03;
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
         }
 
-        /* --- MOUSE SPOTLIGHT --- */
+        /* --- MOUSE SPOTLIGHT (Reduced Intensity) --- */
         #cursor-spotlight {
             position: fixed;
             top: 0;
             left: 0;
             width: 800px;
             height: 800px;
-            background: radial-gradient(circle, rgba(40, 233, 140, 0.06) 0%, rgba(0, 0, 0, 0) 70%);
+            background: radial-gradient(circle, rgba(40, 233, 140, 0.04) 0%, rgba(0, 0, 0, 0) 70%);
             transform: translate(-50%, -50%);
             pointer-events: none;
             z-index: 4;
@@ -237,7 +240,7 @@
             letter-spacing: 1px;
             text-transform: uppercase;
             font-weight: 600;
-            font-family: 'Rajdhani', sans-serif;
+            font-family: 'Barlow', sans-serif;
             transition: height 0.4s ease, opacity 0.4s ease;
             overflow: hidden;
         }
@@ -260,7 +263,7 @@
 
         .hvn-top-right a:hover {
             color: var(--hvn-primary);
-            text-shadow: 0 0 10px var(--hvn-primary);
+            /* Removed Glow for cleaner look */
         }
 
         .hvn-navbar {
@@ -302,7 +305,8 @@
         .hvn-nav-item {
             color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
-            font-size: 1rem;
+            font-size: 0.95rem;
+            /* Slightly smaller for professional feel */
             text-transform: uppercase;
             letter-spacing: 1px;
             font-weight: 600;
@@ -320,12 +324,12 @@
             height: 2px;
             background: var(--hvn-primary);
             transition: 0.3s ease;
-            box-shadow: 0 0 10px var(--hvn-primary);
+            /* Removed shadow for cleaner look */
         }
 
         .hvn-nav-item:hover {
             color: var(--hvn-secondary);
-            text-shadow: 0 0 8px rgba(40, 233, 140, 0.5);
+            /* Removed text-shadow for cleaner look */
         }
 
         .hvn-nav-item:hover::after {
@@ -381,92 +385,105 @@
         .float-icon.whatsapp:hover {
             background: #25D366;
             border-color: #25D366;
-            box-shadow: 0 0 15px #25D366;
+            box-shadow: 0 0 15px rgba(37, 211, 102, 0.3);
+            /* Reduced glow */
         }
 
         .float-icon.phone:hover {
             background: var(--hvn-primary);
             border-color: var(--hvn-primary);
-            box-shadow: 0 0 15px var(--hvn-primary);
+            box-shadow: 0 0 15px rgba(40, 233, 140, 0.3);
+            /* Reduced glow */
             color: #000;
         }
 
         .float-icon.mail:hover {
             background: var(--hvn-accent);
             border-color: var(--hvn-accent);
-            box-shadow: 0 0 15px var(--hvn-accent);
+            box-shadow: 0 0 15px rgba(230, 57, 70, 0.3);
+            /* Reduced glow */
         }
 
 
 
 
 
-/* --- UPDATED LOGO STYLES --- */
-.hvn-logo-container {
-    display: flex;
-    align-items: center;
-    height: 100%;
-}
+        /* --- UPDATED LOGO STYLES --- */
+        .hvn-logo-container {
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
 
-.hvn-logo-container img {
-    height: 50px; /* Adjust height to fit navbar */
-    width: auto;
-    object-fit: contain;
-    /* Optional: If your logo is black and needs to be white, use filter */
-    /* filter: brightness(0) invert(1); */ 
-}
+        .hvn-logo-container img {
+            height: 50px;
+            /* Adjust height to fit navbar */
+            width: auto;
+            object-fit: contain;
+            /* Optional: If your logo is black and needs to be white, use filter */
+            /* filter: brightness(0) invert(1); */
+        }
 
-/* --- UPDATED RESPONSIVE NAVBAR CSS --- */
-@media (max-width: 992px) {
-    /* 1. Show the Hamburger Menu Button */
-    .hvn-menu-btn {
-        display: block; 
-        font-size: 1.8rem;
-        color: var(--hvn-primary);
-        cursor: pointer;
-        z-index: 1002;
-    }
+        /* --- UPDATED RESPONSIVE NAVBAR CSS --- */
+        @media (max-width: 1290px) {
+            /* Changed from 1024px to 1290px as requested */
 
-    /* 2. Style the Navigation Links for Mobile (Off-canvas) */
-    .hvn-nav-links {
-        position: fixed;
-        top: 0;
-        right: -100%; /* Hide off-screen initially */
-        width: 100%; /* Full width */
-        height: 100vh;
-        background: rgba(5, 5, 5, 0.98); /* Dark background */
-        backdrop-filter: blur(20px);
-        display: flex;
-        flex-direction: column; /* Stack links vertically */
-        justify-content: center;
-        align-items: center;
-        gap: 30px; /* Space between links */
-        transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-        z-index: 1001;
-        border-left: 1px solid rgba(255, 255, 255, 0.1);
-    }
+            /* 1. Show the Hamburger Menu Button */
+            .hvn-menu-btn {
+                display: block;
+                font-size: 1.8rem;
+                color: var(--hvn-primary);
+                cursor: pointer;
+                z-index: 1002;
+            }
 
-    /* 3. The Active Class (Triggered by JS) */
-    .hvn-nav-links.active {
-        right: 0; /* Slide in */
-    }
+            /* 2. Style the Navigation Links for Mobile (Off-canvas) */
+            .hvn-nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                /* Hide off-screen initially */
+                width: 100%;
+                /* Full width */
+                height: 100vh;
+                background: rgba(5, 5, 5, 0.98);
+                /* Dark background */
+                backdrop-filter: blur(20px);
+                display: flex;
+                flex-direction: column;
+                /* Stack links vertically */
+                justify-content: center;
+                align-items: center;
+                gap: 30px;
+                /* Space between links */
+                transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+                z-index: 1001;
+                border-left: 1px solid rgba(255, 255, 255, 0.1);
+            }
 
-    /* 4. Adjust Link Font Size for Mobile */
-    .hvn-nav-item {
-        font-size: 1.5rem;
-        opacity: 0; /* Hidden for animation */
-        transform: translateY(20px);
-        transition: 0.4s ease;
-    }
+            /* 3. The Active Class (Triggered by JS) */
+            .hvn-nav-links.active {
+                right: 0;
+                /* Slide in */
+            }
 
-    /* 5. Animate links when menu is active */
-    .hvn-nav-links.active .hvn-nav-item {
-        opacity: 1;
-        transform: translateY(0);
-        /* Stagger effect handled by CSS delay is tricky, usually JS is better, 
+            /* 4. Adjust Link Font Size for Mobile */
+            .hvn-nav-item {
+                font-size: 1.5rem;
+                opacity: 0;
+                /* Hidden for animation */
+                transform: translateY(20px);
+                transition: 0.4s ease;
+            }
+
+            /* 5. Animate links when menu is active */
+            .hvn-nav-links.active .hvn-nav-item {
+                opacity: 1;
+                transform: translateY(0);
+                /* Stagger effect handled by CSS delay is tricky, usually JS is better, 
            but simple transition works fine here */
-    }
-}
+            }
+        }
 
 
 
@@ -515,7 +532,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, var(--hvn-bg-dark) 0%, rgba(8, 10, 15, 0.95) 25%, rgba(8, 10, 15, 0.3) 100%);
+            background: linear-gradient(90deg, var(--hvn-bg-dark) 0%, rgba(8, 10, 15, 0.9) 25%, rgba(8, 10, 15, 0.2) 100%);
             z-index: 2;
         }
 
@@ -523,7 +540,7 @@
             position: absolute;
             pointer-events: none;
             z-index: 5;
-            border-color: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.15);
             border-style: solid;
             transition: 0.3s;
         }
@@ -544,26 +561,26 @@
             border-width: 0 1px 1px 0;
         }
 
-        .tb-tl::after {
-            content: '';
-            position: absolute;
-            top: -1px;
-            left: -1px;
-            width: 30px;
-            height: 3px;
-            background: var(--hvn-primary);
-            box-shadow: 0 0 15px var(--hvn-primary);
-        }
-
+        /* Removed glowing lightsaber effects for a "Deep Engineering" look */
+        .tb-tl::after,
         .tb-br::after {
             content: '';
             position: absolute;
-            bottom: -1px;
-            right: -1px;
             width: 30px;
             height: 3px;
+            /* Solid colors instead of glow */
+            background: var(--hvn-primary);
+        }
+
+        .tb-tl::after {
+            top: -1px;
+            left: -1px;
+        }
+
+        .tb-br::after {
+            bottom: -1px;
+            right: -1px;
             background: var(--hvn-accent);
-            box-shadow: 0 0 15px var(--hvn-accent);
         }
 
         .hvn-hero-container {
@@ -598,12 +615,12 @@
             align-items: center;
             gap: 12px;
             color: var(--hvn-primary);
-            font-size: 1rem;
-            letter-spacing: 4px;
+            font-size: 0.9rem;
+            letter-spacing: 3px;
             text-transform: uppercase;
             margin-bottom: 20px;
             font-weight: 700;
-            text-shadow: 0 0 15px rgba(40, 233, 140, 0.4);
+            /* Removed heavy text shadow */
         }
 
         .hvn-hero-title {
@@ -613,23 +630,24 @@
             font-weight: 700;
             margin-bottom: 25px;
             color: var(--hvn-secondary);
-            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+            /* Reduced shadow intensity for professionalism */
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
         }
 
         .hvn-hero-title span.outline {
             color: transparent;
-            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.4);
             display: block;
         }
 
         .text-highlight-green {
             color: var(--hvn-primary);
-            text-shadow: 0 0 25px rgba(40, 233, 140, 0.6);
+            /* Removed heavy glow */
         }
 
         .text-highlight-red {
             color: var(--hvn-accent);
-            text-shadow: 0 0 25px rgba(230, 57, 70, 0.6);
+            /* Removed heavy glow */
         }
 
         .word-mask {
@@ -644,23 +662,24 @@
 
         .hvn-hero-desc {
             font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.75);
+            color: rgba(255, 255, 255, 0.8);
             max-width: 550px;
             line-height: 1.7;
             margin-bottom: 45px;
-            font-weight: 300;
+            font-weight: 400;
             border-left: 3px solid rgba(255, 255, 255, 0.1);
             padding-left: 20px;
         }
 
+        /* "Deep Engineering" Button Style - Precise, no blur */
         .hvn-btn-glow {
             display: inline-flex;
             align-items: center;
             gap: 15px;
             padding: 16px 45px;
-            background: rgba(40, 233, 140, 0.05);
-            border: 1px solid rgba(40, 233, 140, 0.3);
-            color: var(--hvn-secondary);
+            background: transparent;
+            border: 1px solid var(--hvn-primary);
+            color: var(--hvn-primary);
             text-decoration: none;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -668,7 +687,7 @@
             position: relative;
             overflow: hidden;
             transition: 0.3s;
-            backdrop-filter: blur(5px);
+            /* backdrop-filter: blur(5px); Removed for clearer look */
         }
 
         .hvn-btn-glow::before {
@@ -678,15 +697,15 @@
             left: 0;
             width: 0%;
             height: 100%;
-            background: linear-gradient(90deg, var(--hvn-primary), #1EB36C);
+            background: var(--hvn-primary);
+            /* Solid color instead of gradient */
             z-index: -1;
             transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
         .hvn-btn-glow:hover {
-            border-color: var(--hvn-primary);
             color: #000;
-            box-shadow: 0 0 40px rgba(40, 233, 140, 0.4);
+            /* Removed glow box-shadow */
         }
 
         .hvn-btn-glow:hover::before {
@@ -705,7 +724,7 @@
         .slider-btn {
             width: 55px;
             height: 55px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -718,10 +737,10 @@
         }
 
         .slider-btn:hover {
-            background: var(--hvn-primary);
-            border-color: var(--hvn-primary);
+            background: #fff;
+            border-color: #fff;
             color: black;
-            box-shadow: 0 0 20px rgba(40, 233, 140, 0.6);
+            /* Removed colored glow */
             transform: scale(1.1);
         }
 
@@ -740,7 +759,7 @@
             width: 6px;
             height: 6px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.3);
             cursor: pointer;
             transition: 0.3s;
             position: relative;
@@ -752,12 +771,12 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%) scale(0);
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
             border: 1px solid var(--hvn-primary);
             border-radius: 50%;
             transition: 0.3s;
-            box-shadow: 0 0 10px var(--hvn-primary);
+            /* Removed shadow */
         }
 
         .hvn-dot.active {
@@ -783,7 +802,8 @@
             height: 100%;
             z-index: 1;
             pointer-events: none;
-            opacity: 0.6;
+            opacity: 0.4;
+            /* Reduced opacity */
         }
 
         .hvn-about-container {
@@ -798,11 +818,11 @@
         .about-sub {
             font-weight: 700;
             color: var(--hvn-primary);
-            letter-spacing: 4px;
+            letter-spacing: 3px;
             text-transform: uppercase;
             margin-bottom: 20px;
             display: block;
-            text-shadow: 0 0 15px rgba(40, 233, 140, 0.4);
+            /* Removed text shadow */
         }
 
         .about-heading {
@@ -816,7 +836,7 @@
 
         .about-heading span {
             color: var(--hvn-accent);
-            text-shadow: 0 0 20px rgba(230, 57, 70, 0.4);
+            /* Removed heavy text shadow */
         }
 
         .about-desc {
@@ -843,7 +863,7 @@
             height: 500px;
             width: 100%;
             background: rgba(0, 0, 0, 0.5);
-            box-shadow: 0 0 30px rgba(40, 233, 140, 0.05);
+            /* Removed shadow */
             transition: transform 0.1s;
         }
 
@@ -890,7 +910,7 @@
         }
 
         .stat-item h3 {
-            font-family: 'Rajdhani', sans-serif;
+            font-family: 'Barlow', sans-serif;
             font-size: 3.5rem;
             color: #fff;
             margin: 0;
@@ -978,9 +998,9 @@
         }
 
         .arrow-btn:hover {
-            background: var(--hvn-primary);
+            background: #fff;
             color: #000;
-            border-color: var(--hvn-primary);
+            border-color: #fff;
             transform: scale(1.1);
         }
 
@@ -1018,7 +1038,8 @@
             filter: grayscale(0%);
             opacity: 1;
             transform: scale(1);
-            box-shadow: 0 10px 40px rgba(40, 233, 140, 0.1);
+            /* Reduced shadow */
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
             border-color: var(--hvn-primary);
             z-index: 2;
         }
@@ -1052,7 +1073,7 @@
         }
 
         .leader-name {
-            font-family: 'Rajdhani', sans-serif;
+            font-family: 'Barlow', sans-serif;
             font-weight: 700;
             font-size: 1.8rem;
             color: #fff;
@@ -1169,7 +1190,8 @@
         #hvn-products {
             background: #080a0f;
             padding-top: 100px;
-            background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            /* Subtle technical grid background */
+            background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
             background-size: 60px 60px;
         }
 
@@ -1546,6 +1568,284 @@
             letter-spacing: 1px;
         }
 
+        /* --- QUALITY ASSURANCE SECTION STYLES (NEW) --- */
+        #hvn-quality {
+            background: #080a0f;
+            position: relative;
+            background-image: radial-gradient(circle at 50% 50%, rgba(40, 233, 140, 0.03) 0%, transparent 50%);
+        }
+
+        .quality-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .quality-card {
+            background: #000;
+            /* Fallback background */
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            min-height: 250px;
+            /* Ensure height for image visibility */
+            justify-content: flex-end;
+            /* Align text to bottom like bento cards */
+        }
+
+        .quality-card:hover {
+            border-color: var(--hvn-primary);
+            transform: translateY(-5px);
+            /* Reduced shadow */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* NEW: Background Image Styles */
+        .quality-card-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), filter 0.6s ease;
+            filter: grayscale(100%) brightness(0.25);
+            /* Dark & BW initially */
+            z-index: 0;
+        }
+
+        .quality-card:hover .quality-card-bg {
+            transform: scale(1.15);
+            /* Zoom Effect */
+            filter: grayscale(0%) brightness(0.5);
+            /* Color & Brighter */
+        }
+
+        .quality-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 0%;
+            background: var(--hvn-primary);
+            transition: 0.3s;
+            z-index: 2;
+            /* Above image */
+        }
+
+        .quality-card:hover::before {
+            height: 100%;
+        }
+
+        /* Ensure content sits on top of image */
+        .quality-icon,
+        .quality-name,
+        .quality-desc {
+            position: relative;
+            z-index: 1;
+        }
+
+        .quality-icon {
+            font-size: 2.5rem;
+            color: var(--hvn-primary);
+            margin-bottom: 10px;
+            /* text-shadow: 0 5px 15px rgba(0,0,0,0.8); */
+        }
+
+        .quality-name {
+            font-size: 1.5rem;
+            font-family: 'Barlow', sans-serif;
+            font-weight: 700;
+            color: #fff;
+            text-transform: uppercase;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+        }
+
+        .quality-desc {
+            color: rgba(255, 255, 255, 0.9);
+            /* Brighter text for readability over img */
+            font-size: 0.95rem;
+            line-height: 1.5;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+        }
+
+        /* --- RESPONSIVE FIXES (STRICT MOBILE RULES) --- */
+        @media (max-width: 1024px) {
+
+            /* General Section Padding Adjustment */
+            .hvn-section {
+                padding-top: 100px !important;
+                padding-bottom: 60px !important;
+                height: auto !important;
+                /* Force auto height */
+                min-height: auto !important;
+                display: block !important;
+                /* Remove flex centering behavior on mobile */
+            }
+
+            /* Fix Hero overlap */
+            #hvn-hero {
+                height: 100vh !important;
+                padding-top: 0 !important;
+                /* Reset standard padding for hero */
+            }
+
+            .hvn-hero-container {
+                padding-top: 80px !important;
+                /* Offset for navbar */
+            }
+
+            /* 1. PRODUCTS SECTION (Bento Grid) */
+            .bento-grid {
+                display: grid !important;
+                grid-template-columns: 1fr !important;
+                /* Force 1 column stack */
+                grid-template-rows: auto !important;
+                gap: 20px !important;
+                height: auto !important;
+                /* Remove fixed height */
+            }
+
+            .bento-card {
+                min-height: 250px !important;
+                /* Ensure visibility */
+            }
+
+            /* Kill Grid Spanning on Mobile */
+            .span-2,
+            .span-row-2 {
+                grid-column: auto !important;
+                grid-row: auto !important;
+            }
+
+            /* 2. MASTERPIECE SECTION (Expanding Gallery) */
+            #hvn-masterpiece {
+                padding-top: 100px !important;
+                height: auto !important;
+                min-height: auto !important;
+            }
+
+            .masterpiece-header {
+                position: relative !important;
+                top: 0 !important;
+                margin-bottom: 30px !important;
+                padding: 0 20px !important;
+            }
+
+            .hvn-flex-gallery {
+                flex-direction: column !important;
+                /* Force vertical stack */
+                height: auto !important;
+                display: block !important;
+            }
+
+            .flex-panel {
+                width: 100% !important;
+                height: 250px !important;
+                /* Fixed height for visibility */
+                border-right: none !important;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+                display: block !important;
+                position: relative !important;
+            }
+
+            /* Expand vertically on hover/touch */
+            .flex-panel:hover {
+                height: 400px !important;
+                flex: none !important;
+            }
+
+            .flex-content {
+                bottom: 30px !important;
+                left: 30px !important;
+            }
+
+            .panel-heading {
+                font-size: 1.8rem !important;
+            }
+
+            .panel-text {
+                white-space: normal !important;
+                max-width: 100% !important;
+            }
+
+            /* 3. SUSTAINABILITY SECTION */
+            #hvn-sustainability {
+                padding: 100px 0 !important;
+                background-attachment: scroll !important;
+                /* Fix mobile background issue */
+                height: auto !important;
+                min-height: auto !important;
+            }
+
+            .sus-container {
+                display: block !important;
+                /* Simple block stack */
+            }
+
+            .sus-card {
+                height: auto !important;
+                min-height: 450px !important;
+                margin-bottom: 30px !important;
+            }
+
+            .sus-title {
+                font-size: 2rem !important;
+            }
+
+            /* 4. INFRASTRUCTURE & QUALITY */
+            .panels-wrapper {
+                flex-direction: column !important;
+                display: block !important;
+                height: auto !important;
+            }
+
+            .panel {
+                width: 100% !important;
+                height: 300px !important;
+                /* Explicit height */
+                border-right: none !important;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+                display: block !important;
+            }
+
+            .panel:hover {
+                flex: none !important;
+                height: 350px !important;
+            }
+
+            .quality-grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            /* 5. TYPOGRAPHY & SPACING FIXES */
+            .section-header h2 {
+                font-size: 2.5rem !important;
+            }
+
+            .about-heading {
+                font-size: 2.5rem !important;
+            }
+
+            .stats-row {
+                flex-direction: column !important;
+                gap: 20px !important;
+            }
+
+            .infra-header h2 {
+                font-size: 2.5rem !important;
+            }
+        }
+
         /* --- GLOBAL FOOTPRINT SECTION (FIXED TOOLTIPS) --- */
         #hvn-global {
             background: #020202;
@@ -1581,7 +1881,8 @@
             background: var(--hvn-primary);
             border-radius: 50%;
             cursor: pointer;
-            box-shadow: 0 0 15px var(--hvn-primary);
+            /* Reduced shadow */
+            box-shadow: 0 0 5px var(--hvn-primary);
             transition: 0.3s;
             z-index: 5;
         }
@@ -1598,8 +1899,9 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 30px;
-            height: 30px;
+            width: 24px;
+            /* Slightly smaller pulse */
+            height: 24px;
             border: 1px solid var(--hvn-primary);
             border-radius: 50%;
             animation: pulseDot 2s infinite;
@@ -1613,8 +1915,8 @@
             }
 
             100% {
-                width: 40px;
-                height: 40px;
+                width: 30px;
+                height: 30px;
                 opacity: 0;
             }
         }
@@ -1811,40 +2113,6 @@
         .flex-panel:hover .panel-text {
             max-width: 500px;
             opacity: 1;
-        }
-
-        @media (max-width: 992px) {
-            .hvn-flex-gallery {
-                flex-direction: column;
-            }
-
-            .flex-panel {
-                width: 100%;
-                border-right: none;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            }
-
-            .masterpiece-header {
-                position: relative;
-                top: 0;
-                padding-top: 100px;
-                padding-bottom: 20px;
-            }
-
-            #hvn-masterpiece {
-                height: auto;
-                min-height: 100vh;
-                display: block;
-            }
-
-            .flex-panel {
-                height: 25vh;
-            }
-
-            .flex-panel:hover {
-                height: 50vh;
-                flex: none;
-            }
         }
 
         /* --- SUSTAINABILITY SECTION --- */
@@ -2304,7 +2572,7 @@
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
         }
 
-        /* --- FOOTER (New Design) --- */
+        /* --- FOOTER (Revamped Sexy Design) --- */
         #hvn-footer {
             background: #020202;
             padding: 100px 5vw 40px;
@@ -2324,7 +2592,7 @@
             color: rgba(255, 255, 255, 0.02);
             white-space: nowrap;
             pointer-events: none;
-            font-family: 'Rajdhani', sans-serif;
+            font-family: 'Barlow', sans-serif;
             z-index: 0;
         }
 
@@ -2437,7 +2705,7 @@
             cursor: pointer;
             font-weight: 700;
             text-transform: uppercase;
-            font-family: 'Rajdhani', sans-serif;
+            font-family: 'Barlow', sans-serif;
             transition: 0.3s;
         }
 
@@ -2528,7 +2796,7 @@
             }
 
             /* Hide map dots on very small screens to prevent overlap issues, 
-               or adjust positions if needed. For now, keeping them but maybe smaller. */
+            or adjust positions if needed. For now, keeping them but maybe smaller. */
             .map-dot {
                 width: 8px;
                 height: 8px;
@@ -2564,9 +2832,9 @@
 
     <!-- FLOATING SOCIAL WIDGET -->
     <div class="floating-socials">
-        <a href="https://wa.me/919897054321" target="_blank" class="float-icon whatsapp" title="WhatsApp"><i
+        <a href="https://wa.me/919910487570" target="_blank" class="float-icon whatsapp" title="WhatsApp"><i
                 class="fa-brands fa-whatsapp"></i></a>
-        <a href="tel:+919897054321" class="float-icon phone" title="Call Us"><i class="fa-solid fa-phone"></i></a>
+        <a href="tel:+919910487570" class="float-icon phone" title="Call Us"><i class="fa-solid fa-phone"></i></a>
         <a href="mailto:info@hvnpowercare.com" class="float-icon mail" title="Email Us"><i
                 class="fa-solid fa-envelope"></i></a>
     </div>
@@ -2574,22 +2842,24 @@
     <header id="mainHeader">
         <div class="hvn-topbar">
             <div class="hvn-top-left"><span><i class="fa-solid fa-envelope"></i> info@hvnpowercare.com</span><span><i
-                        class="fa-solid fa-phone"></i> +91 98970 54321</span></div>
-            <div class="hvn-top-right"><a href="#"><i class="fa-brands fa-facebook-f"></i></a><a href="#"><i
-                        class="fa-brands fa-linkedin-in"></i></a><a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        class="fa-solid fa-phone"></i> +91 9910487570</span></div>
+            <div class="hvn-top-right"><a><i class="fa-brands fa-facebook-f"></i></a><a><i
+                        class="fa-brands fa-linkedin-in"></i></a><a><i class="fa-brands fa-instagram"></i></a>
             </div>
         </div>
         <nav class="hvn-navbar">
             <!-- Note: Placeholder logo since original asset may not load in preview -->
             <div class="hvn-logo-container">
-                <img src="assets/images/logo/hvn-logo-text.png" alt="">
+                <img src="assets/images/logo/hvn-logo-text.png" alt=""
+                    onerror="this.style.display='none'; this.parentElement.innerHTML='<h2 style=\'color:white; font-family:Barlow;\'>HVN POWERCARE</h2>'">
             </div>
             <div class="hvn-nav-links">
                 <a href="#hvn-hero" class="hvn-nav-item">Home</a>
                 <a href="#hvn-about" class="hvn-nav-item">About Us</a>
-                <a href="#hvn-leadership" class="hvn-nav-item">Leadership</a>
+                <!-- <a href="#hvn-leadership" class="hvn-nav-item">Leadership</a> -->
                 <a href="#hvn-products" class="hvn-nav-item">Products</a>
                 <a href="#hvn-infrastructure" class="hvn-nav-item">Infrastructure</a>
+                <a href="#hvn-quality" class="hvn-nav-item">Quality</a>
                 <a href="#hvn-masterpiece" class="hvn-nav-item">Innovation</a>
                 <a href="#hvn-sustainability" class="hvn-nav-item">Sustainability</a>
                 <a href="#hvn-showcase" class="hvn-nav-item">Showcase</a>
@@ -2602,9 +2872,10 @@
     <div class="hvn-progress-dots">
         <div class="hvn-dot active" onclick="scrollToSection('hvn-hero')"></div>
         <div class="hvn-dot" onclick="scrollToSection('hvn-about')"></div>
-        <div class="hvn-dot" onclick="scrollToSection('hvn-leadership')"></div>
+        <!-- <div class="hvn-dot" onclick="scrollToSection('hvn-leadership')"></div> -->
         <div class="hvn-dot" onclick="scrollToSection('hvn-products')"></div>
         <div class="hvn-dot" onclick="scrollToSection('hvn-infrastructure')"></div>
+        <div class="hvn-dot" onclick="scrollToSection('hvn-quality')"></div>
         <div class="hvn-dot" onclick="scrollToSection('hvn-masterpiece')"></div>
         <div class="hvn-dot" onclick="scrollToSection('hvn-global')"></div>
         <div class="hvn-dot" onclick="scrollToSection('hvn-sustainability')"></div>
@@ -2633,66 +2904,76 @@
         <section id="hvn-hero" class="hvn-section">
             <div class="tech-border tb-tl"></div>
             <div class="tech-border tb-br"></div>
+
+            <!-- Slide 1 -->
             <div class="hvn-slide active">
-                <div class="hvn-slide-bg"
-                    style="background-image: url('assets/images/banner/slider-1.jpeg');">
+                <div class="hvn-slide-bg" style="background-image: url('assets/images/banner/slider-1.jpeg');">
                 </div>
                 <div class="hvn-hero-overlay"></div>
                 <div class="hvn-hero-container">
                     <div class="hvn-hero-text-content">
-                        <div class="hvn-hero-label">High Voltage Solutions</div>
-                        <h1 class="hvn-hero-title"><span class="word-mask"><span
-                                    class="word-reveal">Engineered</span></span><span class="word-mask"><span
-                                    class="word-reveal">For <span
-                                        class="text-highlight-green">Extreme</span></span></span><span
-                                class="word-mask"><span class="word-reveal outline">Performance</span></span></h1>
-                        <p class="hvn-hero-desc">Redefining power transmission with precision manufacturing and advanced
-                            high-voltage engineering solutions.</p>
+                        <div class="hvn-hero-label">LED & Display Solutions</div>
+                        <h1 class="hvn-hero-title">
+                            <span class="word-mask"><span class="word-reveal">Engineered</span></span>
+                            <span class="word-mask"><span class="word-reveal">For <span
+                                        class="text-highlight-green">Precision</span></span></span>
+                            <span class="word-mask"><span class="word-reveal outline">Reliability</span></span>
+                        </h1>
+                        <p class="hvn-hero-desc">Advanced LED drivers and price display systems built for consistent
+                            performance and long-term field durability.</p>
                         <a href="#hvn-about" class="hvn-btn-glow">Explore Products</a>
                     </div>
                 </div>
             </div>
+
+            <!-- Slide 2 -->
             <div class="hvn-slide">
-                <div class="hvn-slide-bg"
-                    style="background-image: url('assets/images/banner/slider-2.jpeg');">
+                <div class="hvn-slide-bg" style="background-image: url('assets/images/banner/slider-2.jpeg');">
                 </div>
                 <div class="hvn-hero-overlay"></div>
                 <div class="hvn-hero-container">
                     <div class="hvn-hero-text-content">
-                        <div class="hvn-hero-label">Global Infrastructure</div>
-                        <h1 class="hvn-hero-title"><span class="word-mask"><span
-                                    class="word-reveal">Building</span></span><span class="word-mask"><span
-                                    class="word-reveal"><span
-                                        class="text-highlight-green">Tomorrow's</span></span></span><span
-                                class="word-mask"><span class="word-reveal outline">Energy</span></span></h1>
-                        <p class="hvn-hero-desc">State-of-the-art manufacturing facilities delivering certified
-                            excellence.</p><a href="#hvn-about" class="hvn-btn-glow">View Infrastructure</a>
+                        <div class="hvn-hero-label">Aluminum High Pressure Die Casting</div>
+                        <h1 class="hvn-hero-title">
+                            <span class="word-mask"><span class="word-reveal">Building</span></span>
+                            <span class="word-mask"><span class="word-reveal"><span
+                                        class="text-highlight-green">EV-Ready</span></span></span>
+                            <span class="word-mask"><span class="word-reveal outline">Components</span></span>
+                        </h1>
+                        <p class="hvn-hero-desc">Precision die-cast parts manufactured for emerging mobility and
+                            automotive applications.</p>
+                        <a href="#hvn-about" class="hvn-btn-glow">View Capabilities</a>
                     </div>
                 </div>
             </div>
+
+            <!-- Slide 3 -->
             <div class="hvn-slide">
-                <div class="hvn-slide-bg"
-                    style="background-image: url('assets/images/banner/slider-3.jpeg');">
+                <div class="hvn-slide-bg" style="background-image: url('assets/images/banner/slider-3.jpeg');">
                 </div>
                 <div class="hvn-hero-overlay"></div>
                 <div class="hvn-hero-container">
                     <div class="hvn-hero-text-content">
-                        <div class="hvn-hero-label">Quality Assurance</div>
-                        <h1 class="hvn-hero-title"><span class="word-mask"><span
-                                    class="word-reveal">Precision</span></span><span class="word-mask"><span
-                                    class="word-reveal">In <span
-                                        class="text-highlight-red">Every</span></span></span><span
-                                class="word-mask"><span class="word-reveal outline">Component</span></span></h1>
-                        <p class="hvn-hero-desc">Rigorous testing ensuring maximum safety.</p><a href="#hvn-about"
-                            class="hvn-btn-glow">Get a Quote</a>
+                        <div class="hvn-hero-label">Quality, Agility & Technical Intimacy</div>
+                        <h1 class="hvn-hero-title">
+                            <span class="word-mask"><span class="word-reveal">Assurance</span></span>
+                            <span class="word-mask"><span class="word-reveal">In <span
+                                        class="text-highlight-red">Every</span></span></span>
+                            <span class="word-mask"><span class="word-reveal outline">Detail</span></span>
+                        </h1>
+                        <p class="hvn-hero-desc">Stringent quality controls backed by customization, transparency and
+                            on-site technical support.</p>
+                        <a href="#hvn-about" class="hvn-btn-glow">Get a Quote</a>
                     </div>
                 </div>
             </div>
+
             <div class="slider-nav">
                 <div class="slider-btn prev-btn"><i class="fa-solid fa-chevron-left"></i></div>
                 <div class="slider-btn next-btn"><i class="fa-solid fa-chevron-right"></i></div>
             </div>
         </section>
+
 
         <!-- SECTION 2: ABOUT US -->
         <section id="hvn-about" class="hvn-section">
@@ -2702,46 +2983,59 @@
                     <div class="col-lg-6">
                         <span class="about-sub reveal-text">Our Expertise</span>
                         <h2 class="about-heading reveal-text">PRECISION <br> <span>Manufacturing</span></h2>
-                        <p class="about-desc reveal-text">Specializing in High-Pressure Aluminium Die Casting for the
-                            <strong>Electric Vehicle</strong>, <strong>Automotive</strong>, and <strong>Renewable
-                                Energy</strong> sectors. We engineer precision components that drive the future of
-                            mobility.
+
+                        <p class="about-desc reveal-text">
+                            HVN Powercare specializes in High-Pressure Aluminum Die Casting alongside advanced LED
+                            driver and LED price display technologies. Our solutions enable fast-evolving applications
+                            across the <strong>Electric Vehicle</strong>, <strong>Automotive</strong>,
+                            <strong>Energy</strong>, and <strong>Retail</strong> sectors.
                         </p>
+
+                        <p class="about-desc reveal-text">
+                            Our journey began with robust LED drivers and field-tested display systems for demanding
+                            outdoor environments. Today, we extend the same principles of <strong>agility</strong>,
+                            <strong>transparency</strong>, and <strong>technical intimacy</strong> to engineered
+                            aluminum components designed for future mobility.
+                        </p>
+
                         <div class="stats-row reveal-text">
                             <div class="stat-item">
-                                <h3 class="counter" data-target="25">0 <span>+</span></h3>
-                                <p>Years of Excellence</p>
+                                <h3 class="counter" data-target="5">0 <span>+</span></h3>
+                                <p>Years of Engineering Experience</p>
                             </div>
                             <div class="stat-item">
-                                <h3 class="counter" data-target="50">0 <span>K+</span></h3>
-                                <p>Tons Capacity</p>
+                                <h3 class="counter" data-target="500">0 <span>K+</span></h3>
+                                <p>LED Drivers & Displays Deployed</p>
                             </div>
                             <div class="stat-item">
                                 <h3 class="counter" data-target="100">0 <span>%</span></h3>
-                                <p>Quality Check</p>
+                                <p>Quality & Functional Assurance</p>
                             </div>
                         </div>
+
                         <a href="#" class="hvn-btn-glow mt-5 reveal-text">Explore Solutions</a>
                     </div>
+
                     <div class="col-lg-5 offset-lg-1">
                         <div class="about-img-wrapper reveal-img tilt-card">
                             <div class="corner c-tl"></div>
                             <div class="corner c-tr"></div>
                             <div class="corner c-bl"></div>
                             <div class="corner c-br"></div>
-                            <div class="about-img-frame"><img
-                                    src="assets/images/abt/abt-img.jpeg"
-                                    alt="Aluminium Casting" class="about-img"></div>
+                            <div class="about-img-frame">
+                                <img src="assets/images/abt/abt-img.jpeg" alt="Aluminium Casting" class="about-img">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION 3: LEADERSHIP -->
+
+        <!-- SECTION 3: LEADERSHIP (HIDDEN TEMPORARILY) -->
+        <!-- 
         <section id="hvn-leadership" class="hvn-section">
             <div class="leadership-container">
-                <!-- Left: Static Content -->
                 <div class="leadership-text reveal-leader">
                     <span class="about-sub">Visionaries</span>
                     <h2>Meet Our <br><span>Leadership</span></h2>
@@ -2752,7 +3046,6 @@
                         <div class="arrow-btn" onclick="slideCards(1)"><i class="fa-solid fa-arrow-right"></i></div>
                     </div>
                 </div>
-                <!-- Right: Card Slider -->
                 <div class="leadership-slider-wrapper reveal-leader">
                     <div class="leader-card-track" id="leaderTrack">
                         <div class="leader-card active">
@@ -2787,7 +3080,8 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> 
+        -->
 
         <!-- SECTION 4: PRODUCTS -->
         <section id="hvn-products" class="hvn-section">
@@ -2796,54 +3090,81 @@
                     <span class="about-sub">Our Solutions</span>
                     <h2 class="about-heading">Engineered For <span>Excellence</span></h2>
                 </div>
+
                 <div class="bento-grid">
-                    <div class="bento-card span-2 reveal-prod"
-                        onclick="openModal('Automotive', 'Precision die-cast engine parts...', 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1966&auto=format&fit=crop', 'fa-solid fa-car-side')">
+
+                    <!-- LED Drivers -->
+                    <div class="bento-card span-2 reveal-prod" onclick="openModal(
+                    'LED Drivers',
+                    'Fully waterproof, reliable, and customizable LED drivers with proven field performance and a 5-year warranty.',
+                    'https://images.unsplash.com/photo-1581091215367-59ab6b2e5a2b?q=80&w=2070&auto=format&fit=crop',
+                    'fa-solid fa-lightbulb'
+                )">
                         <div class="bento-bg"
-                            style="background-image: url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1966&auto=format&fit=crop');">
+                            style="background-image: url('https://www.ledsupply.com/blog/wp-content/uploads/2015/04/Understanding-LED-Drivers.jpg');">
                         </div>
-                        <div class="bento-icon"><i class="fa-solid fa-car-side"></i></div>
+                        <div class="bento-icon"><i class="fa-solid fa-lightbulb"></i></div>
                         <div class="bento-content">
-                            <h3 class="bento-title">Automotive</h3>
-                            <div class="bento-desc">Precision engine components and transmission casings.</div>
+                            <h3 class="bento-title">LED Drivers</h3>
+                            <div class="bento-desc">Long-life, waterproof and high-efficiency power solutions.</div>
                         </div>
                     </div>
-                    <div class="bento-card span-row-2 reveal-prod"
-                        onclick="openModal('Renewable Energy', 'Engineered components...', 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?q=80&w=2070&auto=format&fit=crop', 'fa-solid fa-wind')">
+
+                    <!-- LED Price Display -->
+                    <div class="bento-card span-row-2 reveal-prod" onclick="openModal(
+                    'LED Price Displays',
+                    'Robust outdoor price displays for petrol pumps with exceptional visibility and on-site support.',
+                    'https://images.unsplash.com/photo-1566137024462-fc3ef52374c8?q=80&w=2070&auto=format&fit=crop',
+                    'fa-solid fa-display'
+                )">
                         <div class="bento-bg"
-                            style="background-image: url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?q=80&w=2070&auto=format&fit=crop');">
+                            style="background-image: url('https://images.unsplash.com/photo-1566137024462-fc3ef52374c8?q=80&w=2070&auto=format&fit=crop');">
                         </div>
-                        <div class="bento-icon"><i class="fa-solid fa-wind"></i></div>
+                        <div class="bento-icon"><i class="fa-solid fa-display"></i></div>
                         <div class="bento-content">
-                            <h3 class="bento-title">Renewable Energy</h3>
-                            <div class="bento-desc">Durable parts for wind turbines and solar inverters.</div>
+                            <h3 class="bento-title">LED Price Displays</h3>
+                            <div class="bento-desc">Custom petrol pump display systems with high outdoor durability.
+                            </div>
                         </div>
                     </div>
-                    <div class="bento-card reveal-prod"
-                        onclick="openModal('E-Mobility', 'Lightweight aluminium...', 'https://images.unsplash.com/photo-1593941707882-a5bba14938c7?q=80&w=2072&auto=format&fit=crop', 'fa-solid fa-bolt')">
+
+                    <!-- Aluminium HPDC for EV -->
+                    <div class="bento-card reveal-prod" onclick="openModal(
+                    'Aluminium HPDC Components',
+                    'Precision die-cast components engineered for automotive and EV applications with minimal defects.',
+                    'https://images.unsplash.com/photo-1593941707882-a5bba14938c7?q=80&w=2072&auto=format&fit=crop',
+                    'fa-solid fa-bolt'
+                )">
                         <div class="bento-bg"
                             style="background-image: url('https://images.unsplash.com/photo-1593941707882-a5bba14938c7?q=80&w=2072&auto=format&fit=crop');">
                         </div>
                         <div class="bento-icon"><i class="fa-solid fa-bolt"></i></div>
                         <div class="bento-content">
-                            <h3 class="bento-title">E-Mobility</h3>
-                            <div class="bento-desc">Lightweight battery housings and motor parts.</div>
+                            <h3 class="bento-title">HPDC Components</h3>
+                            <div class="bento-desc">EV-ready precision components using advanced die-casting.</div>
                         </div>
                     </div>
-                    <div class="bento-card reveal-prod"
-                        onclick="openModal('Industrial', 'Heavy-duty machinery...', 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop', 'fa-solid fa-gears')">
+
+                    <!-- Custom & Technical Support -->
+                    <div class="bento-card reveal-prod" onclick="openModal(
+                    'Customization & Support',
+                    'Tailored engineering, customization and on-site support ensuring performance and customer satisfaction.',
+                    'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop',
+                    'fa-solid fa-gears'
+                )">
                         <div class="bento-bg"
                             style="background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop');">
                         </div>
                         <div class="bento-icon"><i class="fa-solid fa-gears"></i></div>
                         <div class="bento-content">
-                            <h3 class="bento-title">Industrial</h3>
-                            <div class="bento-desc">Heavy-duty machinery components.</div>
+                            <h3 class="bento-title">Customization & Support</h3>
+                            <div class="bento-desc">Technical guidance, field support, and solution flexibility.</div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
 
         <!-- SECTION 5: INFRASTRUCTURE -->
         <section id="hvn-infrastructure" class="hvn-section">
@@ -2851,98 +3172,212 @@
                 <div class="infra-header reveal-infra">
                     <h2><span style="color: #fff">Our</span> <span>Factory</span></h2>
                 </div>
+
                 <div class="panels-wrapper">
-                    <div class="panel">
-                        <div class="panel-bg"
-                            style="background-image: url('https://www.castingsforindustry.com/wp-content/uploads/2023/02/slider-crucible.webp');">
-                        </div>
-                        <div class="panel-overlay"></div>
-                        <div class="panel-content"><span class="panel-num">01</span>
-                            <h3>Die Casting</h3>
-                            <div class="panel-details">
-                                <p class="panel-desc">Fully automated high-pressure die casting cells ranging from 350T
-                                    to 1200T locking force.</p>
-                                <div class="panel-specs"><span class="spec-tag">1200T Max</span><span
-                                        class="spec-tag">Auto-Ladling</span></div>
-                            </div>
-                        </div>
-                    </div>
+
+                    <!-- HPDC -->
                     <div class="panel">
                         <div class="panel-bg"
                             style="background-image: url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2070&auto=format&fit=crop');">
                         </div>
                         <div class="panel-overlay"></div>
-                        <div class="panel-content"><span class="panel-num">02</span>
-                            <h3>Machining</h3>
+                        <div class="panel-content"><span class="panel-num">01</span>
+                            <h3>High-Pressure Die Casting</h3>
                             <div class="panel-details">
-                                <p class="panel-desc">Precision CNC and VMC centers ensuring micron-level accuracy for
-                                    complex geometries.</p>
-                                <div class="panel-specs"><span class="spec-tag">5-Axis</span><span
-                                        class="spec-tag">Micron Accuracy</span></div>
+                                <p class="panel-desc">
+                                    500T HPDC machines equipped with auxiliary automation suitable for EV and
+                                    automotive-grade aluminum components.
+                                </p>
+                                <div class="panel-specs">
+                                    <span class="spec-tag">500T</span>
+                                    <span class="spec-tag">Auto Ladling & Spray</span>
+                                    <span class="spec-tag">Die Temp Control</span>
+                                </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Secondary Machining -->
+                    <div class="panel">
+                        <div class="panel-bg"
+                            style="background-image: url('https://www.americanmicroinc.com/wp-content/uploads/2022/09/01-surface-finishes-for-cnc-machining.jpg');">
+                        </div>
+                        <div class="panel-overlay"></div>
+                        <div class="panel-content"><span class="panel-num">02</span>
+                            <h3>Machining & Finishing</h3>
+                            <div class="panel-details">
+                                <p class="panel-desc">
+                                    CNC machining, trimming, deburring and secondary processes ensuring uniform
+                                    tolerances and dimensional accuracy.
+                                </p>
+                                <div class="panel-specs">
+                                    <span class="spec-tag">CNC</span>
+                                    <span class="spec-tag">Trimming Press</span>
+                                    <span class="spec-tag">Deburring</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tooling -->
                     <div class="panel">
                         <div class="panel-bg"
                             style="background-image: url('https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?q=80&w=2070&auto=format&fit=crop');">
                         </div>
                         <div class="panel-overlay"></div>
                         <div class="panel-content"><span class="panel-num">03</span>
-                            <h3>Tool Room</h3>
+                            <h3>Tooling & Maintenance</h3>
                             <div class="panel-details">
-                                <p class="panel-desc">In-house mold design and maintenance facility equipped with
-                                    advanced CAD/CAM software.</p>
-                                <div class="panel-specs"><span class="spec-tag">CAD/CAM</span><span
-                                        class="spec-tag">Rapid Proto</span></div>
+                                <p class="panel-desc">
+                                    In-house mold modifications, preventive maintenance and trials supporting rapid
+                                    turnaround and product agility.
+                                </p>
+                                <div class="panel-specs">
+                                    <span class="spec-tag">Mold Maintenance</span>
+                                    <span class="spec-tag">Trials</span>
+                                    <span class="spec-tag">Quick Change</span>
+                                </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
 
+
+        <!-- SECTION 5.5: QUALITY ASSURANCE (NEW) -->
+        <section id="hvn-quality" class="hvn-section">
+            <div class="container hvn-about-container">
+                <div class="products-header reveal-quality">
+                    <span class="about-sub">Certifications & Standards</span>
+                    <h2 class="about-heading">IATF & ISO <span>Certified</span></h2>
+                    <p class="about-desc" style="max-width: 700px; border:none; padding:0; background:none;">
+                        Our quality systems are compliant with global automotive standards ensuring consistent,
+                        reliable and zero-defect manufacturing. Quality checks are performed at every stage from
+                        melt to final dispatch supported by advanced measurement & testing equipment.
+                    </p>
+                </div>
+
+                <div class="quality-grid reveal-quality">
+
+                    <!-- Instrument 1 -->
+                    <div class="quality-card">
+                        <div class="quality-card-bg"
+                            style="background-image: url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=2070&auto=format&fit=crop');">
+                        </div>
+                        <div class="quality-icon"><i class="fa-solid fa-microscope"></i></div>
+                        <h3 class="quality-name">Spectrometer</h3>
+                        <p class="quality-desc">Chemical analysis for aluminium alloys ensuring melt composition
+                            accuracy.</p>
+                    </div>
+
+                    <!-- Instrument 2 -->
+                    <div class="quality-card">
+                        <div class="quality-card-bg"
+                            style="background-image: url('https://images.unsplash.com/photo-1581093588401-fbb62a02f120?q=80&w=2070&auto=format&fit=crop');">
+                        </div>
+                        <div class="quality-icon"><i class="fa-solid fa-ruler-combined"></i></div>
+                        <h3 class="quality-name">CMM</h3>
+                        <p class="quality-desc">Coordinate Measuring Machine for dimensional verification of precision
+                            parts.</p>
+                    </div>
+
+                    <!-- Instrument 3 -->
+                    <div class="quality-card">
+                        <div class="quality-card-bg"
+                            style="background-image: url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=2070&auto=format&fit=crop');">
+                        </div>
+                        <div class="quality-icon"><i class="fa-solid fa-weight-hanging"></i></div>
+                        <h3 class="quality-name">UTM</h3>
+                        <p class="quality-desc">Universal Testing Machine for tensile strength & mechanical performance
+                            testing.</p>
+                    </div>
+
+                    <!-- Instrument 4 -->
+                    <div class="quality-card">
+                        <div class="quality-card-bg"
+                            style="background-image: url('https://images.unsplash.com/photo-1622675363311-ac97f3a9a525?q=80&w=2070&auto=format&fit=crop');">
+                        </div>
+                        <div class="quality-icon"><i class="fa-solid fa-gem"></i></div>
+                        <h3 class="quality-name">Hardness Test</h3>
+                        <p class="quality-desc">Ensures material durability and consistency as per customer
+                            specifications.</p>
+                    </div>
+
+                    <!-- Instrument 5 -->
+                    <div class="quality-card">
+                        <div class="quality-card-bg"
+                            style="background-image: url('https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=2080&auto=format&fit=crop');">
+                        </div>
+                        <div class="quality-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                        <h3 class="quality-name">Leak Test</h3>
+                        <p class="quality-desc">Pressure & leak testing for fluid and hydraulic components.</p>
+                    </div>
+
+                    <!-- Instrument 6 -->
+                    <div class="quality-card">
+                        <div class="quality-card-bg"
+                            style="background-image: url('https://plus.unsplash.com/premium_photo-1661331825633-4352b2f70363?q=80&w=2070&auto=format&fit=crop');">
+                        </div>
+                        <div class="quality-icon"><i class="fa-solid fa-x-ray"></i></div>
+                        <h3 class="quality-name">X-Ray Inspection</h3>
+                        <p class="quality-desc">Internal defect and porosity detection for casting integrity assurance.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
         <!-- SECTION: MASTERPIECE (EXPANDING FLEX GALLERY) -->
         <section id="hvn-masterpiece" class="hvn-section">
             <div class="masterpiece-header">
-                <h2>THE <span>STANDARD</span></h2>
+                <h2>OEM <span>STANDARDS</span></h2>
             </div>
             <div class="hvn-flex-gallery">
+
                 <div class="flex-panel">
                     <div class="flex-bg"
                         style="background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop');">
                     </div>
                     <div class="flex-content">
-                        <h3 class="panel-heading">AI PRECISION</h3>
-                        <p class="panel-text">Automated robotics ensuring zero-defect manufacturing.</p>
+                        <h3 class="panel-heading">PRECISION MACHINING</h3>
+                        <p class="panel-text">CNC & VMC machining for tight-tolerance aluminium components.</p>
                     </div>
                 </div>
-                <div class="flex-panel">
-                    <div class="flex-bg"
-                        style="background-image: url('https://img-cdn.thepublive.com/filters:format(webp)/industry-wired/media/post_attachments/wp-content/uploads/2020/05/Material-Science.jpg');">
-                    </div>
-                    <div class="flex-content">
-                        <h3 class="panel-heading">MATERIAL SCIENCE</h3>
-                        <p class="panel-text">Advanced alloys for lighter, stronger components.</p>
-                    </div>
-                </div>
+
                 <div class="flex-panel">
                     <div class="flex-bg"
                         style="background-image: url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2069&auto=format&fit=crop');">
                     </div>
                     <div class="flex-content">
-                        <h3 class="panel-heading">SMART LOGISTICS</h3>
-                        <p class="panel-text">Just-in-time delivery with real-time tracking.</p>
+                        <h3 class="panel-heading">HIGH PRESSURE CASTING</h3>
+                        <p class="panel-text">HPDC housings for automotive, EV and industrial applications.</p>
                     </div>
                 </div>
+
+                <div class="flex-panel">
+                    <div class="flex-bg"
+                        style="background-image: url('https://sp-ao.shortpixel.ai/client/to_webp,q_lossless,ret_img,w_350,h_290/http://www.esict.com/wp-content/uploads/featured-img1.jpg');">
+                    </div>
+                    <div class="flex-content">
+                        <h3 class="panel-heading">QUALITY ASSURANCE</h3>
+                        <p class="panel-text">Spectrometer, CMM, X-Ray & UTM ensuring zero-defect output.</p>
+                    </div>
+                </div>
+
                 <div class="flex-panel">
                     <div class="flex-bg"
                         style="background-image: url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2070&auto=format&fit=crop');">
                     </div>
                     <div class="flex-content">
-                        <h3 class="panel-heading">QUALITY CONTROL</h3>
-                        <p class="panel-text">Rigorous testing at every stage of production.</p>
+                        <h3 class="panel-heading">DELIVERY & TRACEABILITY</h3>
+                        <p class="panel-text">JIT supply, PPAP documentation and batch-level traceability.</p>
                     </div>
                 </div>
+
             </div>
         </section>
 
@@ -2950,101 +3385,104 @@
         <section id="hvn-global" class="hvn-section">
             <div class="container hvn-about-container">
                 <div class="products-header reveal-global">
-                    <span class="about-sub">Global Reach</span>
-                    <h2 class="about-heading">Connected <span>Worldwide</span></h2>
+                    <span class="about-sub">OEM Supply Network</span>
+                    <h2 class="about-heading">Trusted <span>Across Industries</span></h2>
                 </div>
                 <div class="global-map-wrapper reveal-global">
-                    <!-- Dots -->
-                    <div class="map-dot loc-usa">
+                    <div class="map-dot loc-india">
                         <div class="map-tooltip">
-                            <i class="fa-solid fa-flag-usa" style="color: var(--hvn-primary); margin-right: 5px;"></i>
+                            <i class="fa-solid fa-industry" style="color: var(--hvn-primary); margin-right:5px;"></i>
                             <div>
-                                <strong>USA Office</strong><br>
-                                <span style="font-size: 0.7em; color: #ccc;">New York, NY</span>
+                                <strong>Manufacturing Base</strong><br>
+                                <span style="font-size:0.7em; color:#ccc;">India</span>
                             </div>
                         </div>
                     </div>
                     <div class="map-dot loc-germany">
                         <div class="map-tooltip">
-                            <i class="fa-solid fa-industry" style="color: var(--hvn-primary); margin-right: 5px;"></i>
+                            <i class="fa-solid fa-car" style="color:var(--hvn-primary); margin-right:5px;"></i>
                             <div>
-                                <strong>Germany HQ</strong><br>
-                                <span style="font-size: 0.7em; color: #ccc;">Munich</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="map-dot loc-india">
-                        <div class="map-tooltip">
-                            <i class="fa-solid fa-cogs" style="color: var(--hvn-primary); margin-right: 5px;"></i>
-                            <div>
-                                <strong>India Mfg. Unit</strong><br>
-                                <span style="font-size: 0.7em; color: #ccc;">Manesar</span>
+                                <strong>Automotive OEMs</strong><br>
+                                <span style="font-size:0.7em; color:#ccc;">Europe</span>
                             </div>
                         </div>
                     </div>
                     <div class="map-dot loc-japan">
                         <div class="map-tooltip">
-                            <i class="fa-solid fa-handshake" style="color: var(--hvn-primary); margin-right: 5px;"></i>
+                            <i class="fa-solid fa-bolt" style="color:var(--hvn-primary); margin-right:5px;"></i>
                             <div>
-                                <strong>Japan Sales</strong><br>
-                                <span style="font-size: 0.7em; color: #ccc;">Tokyo</span>
+                                <strong>EV Components</strong><br>
+                                <span style="font-size:0.7em; color:#ccc;">Asia</span>
                             </div>
                         </div>
                     </div>
-                    <div class="map-dot loc-brazil">
+                    <div class="map-dot loc-usa">
                         <div class="map-tooltip">
-                            <i class="fa-solid fa-warehouse" style="color: var(--hvn-primary); margin-right: 5px;"></i>
+                            <i class="fa-solid fa-lightbulb" style="color:var(--hvn-primary); margin-right:5px;"></i>
                             <div>
-                                <strong>Brazil Hub</strong><br>
-                                <span style="font-size: 0.7em; color: #ccc;">São Paulo</span>
+                                <strong>Lighting OEMs</strong><br>
+                                <span style="font-size:0.7em; color:#ccc;">North America</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="global-stats reveal-global">
                     <div class="global-stat-item">
-                        <span class="global-stat-number counter" data-target="15">0</span>
-                        <span class="global-stat-label">Countries Exported</span>
+                        <span class="global-stat-number counter" data-target="8">0</span>
+                        <span class="global-stat-label">Industries Served</span>
+                    </div>
+                    <div class="global-stat-item">
+                        <span class="global-stat-number counter" data-target="50">0</span>
+                        <span class="global-stat-label">OEM Suppliers</span>
                     </div>
                     <div class="global-stat-item">
                         <span class="global-stat-number counter" data-target="4">0</span>
-                        <span class="global-stat-label">Global Offices</span>
-                    </div>
-                    <div class="global-stat-item">
-                        <span class="global-stat-number counter" data-target="500">0</span>
-                        <span class="global-stat-label">Global Clients</span>
+                        <span class="global-stat-label">Continents</span>
                     </div>
                 </div>
             </div>
         </section>
 
+
         <!-- SECTION 6: SUSTAINABILITY -->
         <section id="hvn-sustainability" class="hvn-section">
             <div class="sus-overlay"></div>
             <div class="sus-container">
+
+                <!-- Card 1 -->
                 <div class="sus-card sus-card-left reveal-sus">
                     <div class="sus-card-bg"></div>
                     <div class="sus-content">
-                        <div class="sus-icon"><i class="fa-solid fa-leaf"></i></div>
-                        <h3 class="sus-title">Green Energy Commitment</h3>
-                        <p class="sus-desc">We are committed to reducing our carbon footprint by integrating renewable
-                            energy sources into our manufacturing processes.</p>
-                        <a href="#" class="sus-link">Our Initiatives <i class="fa-solid fa-arrow-right"></i></a>
+                        <div class="sus-icon"><i class="fa-solid fa-recycle"></i></div>
+                        <h3 class="sus-title">Sustainable Aluminium</h3>
+                        <p class="sus-desc">
+                            Aluminium is infinitely recyclable, enabling reduced material waste and lower environmental
+                            impact.
+                            Our process focuses on efficient melt handling and resource optimization.
+                        </p>
+                        <a href="#" class="sus-link">Material Efficiency <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
+
+                <!-- Card 2 -->
                 <div class="sus-card sus-card-right reveal-sus">
                     <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?q=80&w=1974&auto=format&fit=crop"
                         alt="Innovation" class="sus-card-right-img">
                     <div class="sus-content">
-                        <div class="sus-icon"><i class="fa-solid fa-lightbulb"></i></div>
-                        <h3 class="sus-title">Innovation Driven</h3>
-                        <p class="sus-desc">Pioneering new alloys and casting techniques to create lighter, stronger
-                            components.</p>
-                        <a href="#" class="sus-link">R&D Center <i class="fa-solid fa-arrow-right"></i></a>
+                        <div class="sus-icon"><i class="fa-solid fa-gears"></i></div>
+                        <h3 class="sus-title">Process Innovation</h3>
+                        <p class="sus-desc">
+                            Continuous improvement in die design, metallurgy, tool life, machining parameters, and
+                            quality
+                            validation ensures consistent performance for demanding OEM applications.
+                        </p>
+                        <a href="#" class="sus-link">Technology & R&D <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
+
             </div>
         </section>
+
 
         <!-- SECTION 7: VIDEO SHOWCASE -->
         <section id="hvn-showcase" class="hvn-section">
@@ -3062,9 +3500,9 @@
             <div class="container video-content">
                 <div class="glass-card-center" style="margin: 0 auto;">
                     <div class="showcase-sub">THE PROCESS</div>
-                    <h2 class="showcase-title">Cinematic <br> <span style="color: var(--hvn-primary)">Excellence</span>
-                    </h2>
-                    <div class="video-desc">Manufacturing in Motion</div>
+                    <h2 class="showcase-title">Manufacturing <br> <span style="color: var(--hvn-primary)">In
+                            Motion</span></h2>
+                    <div class="video-desc">From Casting to Final Assembly</div>
                     <div class="play-btn-wrapper">
                         <div class="play-pulse"></div>
                         <div class="play-btn"><i class="fa-solid fa-play"></i></div>
@@ -3072,6 +3510,7 @@
                 </div>
             </div>
         </section>
+
 
         <!-- CONTACT SECTION -->
         <section id="hvn-contact" class="hvn-section">
@@ -3102,7 +3541,7 @@
                             <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
                             <div class="contact-text">
                                 <h4>Call Us</h4>
-                                <p>+91 98970 54321</p>
+                                <p>+91 9910487570</p>
                             </div>
                         </div>
                     </div>
@@ -3135,10 +3574,10 @@
                     <p class="footer-desc">Leading manufacturer of high-precision aluminium die-cast components for the
                         global automotive and energy sectors.</p>
                     <div class="footer-social">
-                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a><i class="fa-brands fa-twitter"></i></a>
+                        <a><i class="fa-brands fa-instagram"></i></a>
+                        <a><i class="fa-brands fa-facebook-f"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
@@ -3154,8 +3593,9 @@
                     <h4>Contact</h4>
                     <ul class="footer-links">
                         <li><a href="mailto:info@hvnpowercare.com">info@hvnpowercare.com</a></li>
-                        <li><a href="tel:+919897054321">+91 98970 54321</a></li>
-                        <li>Manesar, Haryana, India</li>
+                        <li><a href="tel:+919910487570">+91 9910487570</a></li>
+                        <li>HVN Powercare Private Limited
+                            G-2, Site-C, Surajpur Industrial Area, Greater Noida, Uttar Pradesh - 201306</li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -3246,9 +3686,10 @@
             const slide = slides[index];
             slide.classList.add('active');
             const tl = gsap.timeline({ onComplete: () => isAnimating = false });
-            tl.fromTo(slide.querySelectorAll('.word-reveal'), { y: "120%" }, { y: "0%", duration: 1, stagger: 0.15, ease: "power4.out" })
-                .fromTo(slide.querySelector('.hvn-hero-desc'), { x: -30, opacity: 0 }, { x: 0, opacity: 1, duration: 0.8, ease: "power2.out" }, "-=0.6")
-                .fromTo(slide.querySelector('.hvn-btn-glow'), { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: "back.out(1.7)" }, "-=0.6");
+            // Changed easing to expo.out for smoother engineering feel
+            tl.fromTo(slide.querySelectorAll('.word-reveal'), { y: "120%" }, { y: "0%", duration: 1.2, stagger: 0.1, ease: "expo.out" })
+                .fromTo(slide.querySelector('.hvn-hero-desc'), { x: -30, opacity: 0 }, { x: 0, opacity: 1, duration: 1, ease: "power2.out" }, "-=0.8")
+                .fromTo(slide.querySelector('.hvn-btn-glow'), { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: "power2.out" }, "-=0.8");
         }
         let slideInterval = setInterval(nextSlide, 6000);
         function nextSlide() { currentSlide = (currentSlide + 1) % totalSlides; animateSlide(currentSlide); }
@@ -3353,7 +3794,7 @@
                 // Animate Floating Socials
                 .fromTo(".floating-socials",
                     { x: -100, opacity: 0 },
-                    { x: 0, opacity: 1, duration: 1, ease: "back.out(1.7)" }
+                    { x: 0, opacity: 1, duration: 1, ease: "power2.out" }
                     , "-=0.5")
                 .from(".hvn-progress-dots", {
                     x: 50,
@@ -3389,9 +3830,10 @@
                     const id = entry.target.id;
                     let idx = 0;
                     if (id === 'hvn-about') idx = 1;
-                    if (id === 'hvn-leadership') idx = 2;
-                    if (id === 'hvn-products') idx = 3;
-                    if (id === 'hvn-infrastructure') idx = 4;
+                    // if (id === 'hvn-leadership') idx = 2; // Skipped
+                    if (id === 'hvn-products') idx = 2; // Indices shifted
+                    if (id === 'hvn-infrastructure') idx = 3;
+                    if (id === 'hvn-quality') idx = 4;
                     if (id === 'hvn-masterpiece') idx = 5;
                     if (id === 'hvn-global') idx = 6;
                     if (id === 'hvn-sustainability') idx = 7;
@@ -3422,6 +3864,10 @@
                         gsap.fromTo(".infra-header", { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: "power3.out" });
                     }
 
+                    if (id === 'hvn-quality') {
+                        gsap.fromTo(".reveal-quality", { y: 50, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.15, duration: 0.8, ease: "power3.out" });
+                    }
+
                     if (id === 'hvn-global') {
                         gsap.fromTo(".reveal-global", { y: 50, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.2, duration: 1, ease: "power3.out" });
                         document.querySelectorAll('.global-stat-number.counter').forEach(counter => {
@@ -3431,7 +3877,7 @@
                     }
 
                     if (id === 'hvn-sustainability') {
-                        gsap.fromTo(".reveal-sus", { y: 100, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.3, duration: 1, ease: "back.out(1.2)" });
+                        gsap.fromTo(".reveal-sus", { y: 100, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.3, duration: 1, ease: "power2.out" });
                     }
 
                     if (id === 'hvn-showcase') {
