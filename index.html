@@ -30,7 +30,7 @@
         /* --- GLOBAL VARIABLES (REFINED FOR ENGINEERING FEEL) --- */
         :root {
             /* Brand Colors */
-            --hvn-green: #28E98C;
+            --hvn-green: #28e98cb1;
             --hvn-red: #E63946;
 
             /* Mapping to Theme */
@@ -576,7 +576,7 @@
             top: -1px;
             left: -1px;
         }
-
+  
         .tb-br::after {
             bottom: -1px;
             right: -1px;
@@ -590,12 +590,12 @@
             height: 100%;
             display: flex;
             align-items: center;
-            padding: 0 4vw;
+            padding: 0 7vw;
         }
 
         .hvn-hero-text-content {
             max-width: 800px;
-            margin-top: 20px;
+            margin-top: 100px;
             position: relative;
         }
 
@@ -624,7 +624,7 @@
         }
 
         .hvn-hero-title {
-            font-size: clamp(3rem, 6vw, 6rem);
+            font-size: clamp(2rem, 4vw, 4rem);
             line-height: 1;
             text-transform: uppercase;
             font-weight: 700;
@@ -635,8 +635,7 @@
         }
 
         .hvn-hero-title span.outline {
-            color: transparent;
-            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.4);
+            color: #ffff;
             display: block;
         }
 
@@ -661,7 +660,7 @@
         }
 
         .hvn-hero-desc {
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             color: rgba(255, 255, 255, 0.8);
             max-width: 550px;
             line-height: 1.7;
@@ -1757,7 +1756,7 @@
             }
 
             /* 2. MASTERPIECE SECTION (Expanding Gallery) */
-            #hvn-masterpiece {
+            /* #hvn-masterpiece {
                 padding-top: 100px !important;
                 height: auto !important;
                 min-height: auto !important;
@@ -1772,7 +1771,7 @@
 
             .hvn-flex-gallery {
                 flex-direction: column !important;
-                /* Force vertical stack */
+                
                 height: auto !important;
                 display: block !important;
             }
@@ -1780,14 +1779,14 @@
             .flex-panel {
                 width: 100% !important;
                 height: 250px !important;
-                /* Fixed height for visibility */
+                
                 border-right: none !important;
                 border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
                 display: block !important;
                 position: relative !important;
             }
 
-            /* Expand vertically on hover/touch */
+    
             .flex-panel:hover {
                 height: 400px !important;
                 flex: none !important;
@@ -1805,20 +1804,20 @@
             .panel-text {
                 white-space: normal !important;
                 max-width: 100% !important;
-            }
+            } */
 
             /* 3. SUSTAINABILITY SECTION */
-            #hvn-sustainability {
+            /* #hvn-sustainability {
                 padding: 100px 0 !important;
                 background-attachment: scroll !important;
-                /* Fix mobile background issue */
+               
                 height: auto !important;
                 min-height: auto !important;
             }
 
             .sus-container {
                 display: block !important;
-                /* Simple block stack */
+                
             }
 
             .sus-card {
@@ -1829,7 +1828,7 @@
 
             .sus-title {
                 font-size: 2rem !important;
-            }
+            } */
 
             /* 4. INFRASTRUCTURE & QUALITY */
             .panels-wrapper {
@@ -2040,7 +2039,7 @@
         }
 
         /* --- NEW SECTION: "MASTERPIECE" (Expanding Panels - replacing Gallery) --- */
-        #hvn-masterpiece {
+        /* #hvn-masterpiece {
             background: #020202;
             padding: 0;
             height: 100vh;
@@ -2142,10 +2141,10 @@
         .flex-panel:hover .panel-text {
             max-width: 500px;
             opacity: 1;
-        }
+        } */
 
         /* --- SUSTAINABILITY SECTION --- */
-        #hvn-sustainability {
+        /* #hvn-sustainability {
             position: relative;
             background-image: url('assets/images/sustainbility/bg.jpg');
             background-size: cover;
@@ -2270,7 +2269,7 @@
 
         .sus-link:hover i {
             transform: translateX(5px);
-        }
+        } */
 
         /* --- VIDEO SHOWCASE SECTION --- */
         #hvn-showcase {
@@ -2889,8 +2888,8 @@
                 <a href="#hvn-products" class="hvn-nav-item">Products</a>
                 <a href="#hvn-infrastructure" class="hvn-nav-item">Infrastructure</a>
                 <a href="#hvn-quality" class="hvn-nav-item">Quality</a>
-                <a href="#hvn-masterpiece" class="hvn-nav-item">Innovation</a>
-                <a href="#hvn-sustainability" class="hvn-nav-item">Sustainability</a>
+                <!-- <a href="#hvn-masterpiece" class="hvn-nav-item">Innovation</a> -->
+                <!-- <a href="#hvn-sustainability" class="hvn-nav-item">Sustainability</a> -->
                 <a href="#hvn-showcase" class="hvn-nav-item">Showcase</a>
                 <a href="#hvn-contact" class="hvn-nav-item">Contact</a>
             </div>
@@ -2905,9 +2904,9 @@
         <div class="hvn-dot" onclick="scrollToSection('hvn-products')"></div>
         <div class="hvn-dot" onclick="scrollToSection('hvn-infrastructure')"></div>
         <div class="hvn-dot" onclick="scrollToSection('hvn-quality')"></div>
-        <div class="hvn-dot" onclick="scrollToSection('hvn-masterpiece')"></div>
+        <!-- <div class="hvn-dot" onclick="scrollToSection('hvn-masterpiece')"></div> -->
         <div class="hvn-dot" onclick="scrollToSection('hvn-global')"></div>
-        <div class="hvn-dot" onclick="scrollToSection('hvn-sustainability')"></div>
+        <!-- <div class="hvn-dot" onclick="scrollToSection('hvn-sustainability')"></div> -->
         <div class="hvn-dot" onclick="scrollToSection('hvn-showcase')"></div>
         <div class="hvn-dot" onclick="scrollToSection('hvn-contact')"></div>
     </div>
@@ -3278,7 +3277,7 @@
         <section id="hvn-quality" class="hvn-section">
             <div class="container hvn-about-container">
                 <div class="products-header reveal-quality">
-                    <span class="about-sub">Certifications & Standards</span>
+                    <span class="about-sub">Quality & Standards</span>
                     <h2 class="about-heading">IATF & ISO <span>Certified</span></h2>
                     <p class="about-desc" style="max-width: 700px; border:none; padding:0; background:none;">
                         Our quality systems are compliant with global automotive standards ensuring consistent,
@@ -3360,7 +3359,7 @@
 
 
         <!-- SECTION: MASTERPIECE (EXPANDING FLEX GALLERY) -->
-        <section id="hvn-masterpiece" class="hvn-section">
+        <!-- <section id="hvn-masterpiece" class="hvn-section">
             <div class="masterpiece-header">
                 <h2>OEM <span>STANDARDS</span></h2>
             </div>
@@ -3407,7 +3406,7 @@
                 </div>
 
             </div>
-        </section>
+        </section> -->
 
         <!-- SECTION: GLOBAL PRESENCE (NEW) -->
         <section id="hvn-global" class="hvn-section">
@@ -3473,11 +3472,11 @@
 
 
         <!-- SECTION 6: SUSTAINABILITY -->
-        <section id="hvn-sustainability" class="hvn-section">
+        <!-- <section id="hvn-sustainability" class="hvn-section">
             <div class="sus-overlay"></div>
             <div class="sus-container">
 
-                <!-- Card 1 -->
+                
                 <div class="sus-card sus-card-left reveal-sus">
                     <div class="sus-card-bg"></div>
                     <div class="sus-content">
@@ -3492,7 +3491,7 @@
                     </div>
                 </div>
 
-                <!-- Card 2 -->
+ 
                 <div class="sus-card sus-card-right reveal-sus">
                     <img src="assets/images/sustainbility/process-innovation.jpeg" alt="Innovation"
                         class="sus-card-right-img">
@@ -3509,7 +3508,7 @@
                 </div>
 
             </div>
-        </section>
+        </section> -->
 
 
         <!-- SECTION 7: VIDEO SHOWCASE -->
@@ -3613,7 +3612,7 @@
                         <li><a href="#hvn-about">About Us</a></li>
                         <li><a href="#hvn-products">Products</a></li>
                         <li><a href="#hvn-infrastructure">Infrastructure</a></li>
-                        <li><a href="#hvn-sustainability">Sustainability</a></li>
+                        <!-- <li><a href="#hvn-sustainability">Sustainability</a></li> -->
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -3861,11 +3860,11 @@
                     if (id === 'hvn-products') idx = 2; // Indices shifted
                     if (id === 'hvn-infrastructure') idx = 3;
                     if (id === 'hvn-quality') idx = 4;
-                    if (id === 'hvn-masterpiece') idx = 5;
-                    if (id === 'hvn-global') idx = 6;
-                    if (id === 'hvn-sustainability') idx = 7;
-                    if (id === 'hvn-showcase') idx = 8;
-                    if (id === 'hvn-contact') idx = 9;
+                  //  if (id === 'hvn-masterpiece') idx = 5;//
+                    if (id === 'hvn-global') idx = 5;
+                    // if (id === 'hvn-sustainability') idx = 6;//
+                    if (id === 'hvn-showcase') idx = 6;
+                    if (id === 'hvn-contact') idx = 7;
                     if (dots[idx]) dots[idx].classList.add('active');
 
                     if (id === 'hvn-about') {
